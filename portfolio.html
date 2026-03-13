@@ -943,16 +943,28 @@
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
- 
+
+  // Normalise une URL Hugging Face Space vers l'URL d'embed .hf.space
+  function resolveSpaceUrl(url) {
+    const match = url.match(/https?:\/\/huggingface\\.co\\/spaces\\/([^/]+)\\/([^/?#]+)/i);
+    if (match) {
+      const user = match[1];
+      const space = match[2];
+      return `https://${user}-${space}.hf.space`;
+    }
+    return url;
+  }
+
   // Modal functions
   function openModal(id, url, title) {
     if (url && title) {
       document.getElementById('modal-hf-title').textContent = title;
-      document.getElementById('hf-url-generic').value = url;
+      const embedUrl = resolveSpaceUrl(url);
+      document.getElementById('hf-url-generic').value = embedUrl;
       document.getElementById('modal-hf-body').innerHTML = `
-        <iframe src="${url}" allow="accelerometer; camera; microphone; clipboard-read; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+        <iframe src="${embedUrl}" allow="accelerometer; camera; microphone; clipboard-read; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
         <div class="modal-placeholder-input" style="margin-top:0.75rem;">
-          <input type="text" value="${url}" id="hf-url-generic" style="flex:1"/>
+          <input type="text" value="${embedUrl}" id="hf-url-generic" style="flex:1"/>
           <button class="btn-demo" onclick="loadHFSpaceGeneric()">Charger</button>
         </div>`;
     }
@@ -973,14 +985,16 @@
     const url = document.getElementById(inputId).value.trim();
     if (!url) return;
     const body = document.getElementById(modalId).querySelector('.modal-body');
-    body.innerHTML = `<iframe src="${url}" allow="accelerometer; camera; microphone; clipboard-read; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>`;
+    const embedUrl = resolveSpaceUrl(url);
+    body.innerHTML = `<iframe src="${embedUrl}" allow="accelerometer; camera; microphone; clipboard-read; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>`;
   }
- 
+
   function loadHFSpaceGeneric() {
     const url = document.getElementById('hf-url-generic').value.trim();
     if (!url) return;
+    const embedUrl = resolveSpaceUrl(url);
     document.getElementById('modal-hf-body').innerHTML =
-      `<iframe src="${url}" allow="accelerometer; camera; microphone; clipboard-read; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>`;
+      `<iframe src="${embedUrl}" allow="accelerometer; camera; microphone; clipboard-read; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>`;
   }
  
   // ESC key closes modal
