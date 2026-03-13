@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Atillio HOUNGUE — Data Scientist & ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #060c14;
+    --surface: #0d1826;
+    --surface2: #111f33;
+    --border: #1a2e47;
+    --accent: #0ea5e9;
+    --accent2: #38bdf8;
+    --accent-glow: rgba(14,165,233,0.18);
+    --text: #e2eaf4;
+    --muted: #6b8aaa;
+    --white: #f0f7ff;
+    --green: #10b981;
+    --orange: #f59e0b;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+ 
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+ 
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(6,12,20,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem; font-weight: 800;
+    color: var(--white); letter-spacing: 0.04em;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem; font-weight: 400;
+    color: var(--muted); text-decoration: none;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent); color: var(--bg);
+    border: none; padding: 0.55rem 1.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.2s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--accent2); }
+ 
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 8rem 4rem 4rem;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.35;
+  }
+  .hero-glow {
+    position: absolute; width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+    top: -100px; right: -100px; pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 900px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; font-weight: 400;
+    color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
+    border: 1px solid var(--accent); padding: 0.35rem 1rem;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-tag::before { content: '//'; opacity: 0.6; }
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800; line-height: 1.05;
+    color: var(--white); letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+  .hero-title .line2 { color: var(--accent); }
+  .hero-desc {
+    font-size: 1.05rem; font-weight: 300; color: var(--muted);
+    max-width: 580px; line-height: 1.75;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.6s ease 0.2s both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.6s ease 0.3s both;
+  }
+  .btn-primary {
+    background: var(--accent); color: var(--bg);
+    padding: 0.9rem 2.2rem; border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.2s; display: inline-block;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent; color: var(--text);
+    padding: 0.9rem 2.2rem;
+    border: 1px solid var(--border);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem; font-weight: 400;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.2s; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem; flex-wrap: wrap;
+    animation: fadeUp 0.6s ease 0.4s both;
+  }
+  .stat-item { }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem; font-weight: 800; color: var(--accent);
+  }
+  .stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem;
+  }
+ 
+  /* SECTIONS */
+  section { padding: 6rem 4rem; }
+  .section-header { margin-bottom: 3.5rem; }
+  .section-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; color: var(--accent);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .section-tag::before { content: '— '; }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800; color: var(--white);
+    letter-spacing: -0.02em;
+  }
+ 
+  /* SKILLS */
+  #skills { background: var(--surface); }
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--bg); border: 1px solid var(--border);
+    padding: 1.8rem;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .skill-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .skill-card-icon {
+    font-size: 1.5rem; margin-bottom: 1rem;
+  }
+  .skill-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--white); margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem; color: var(--accent);
+    background: var(--accent-glow);
+    border: 1px solid rgba(14,165,233,0.25);
+    padding: 0.25rem 0.65rem;
+    letter-spacing: 0.05em;
+  }
+ 
+  /* EXPERIENCE */
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(180deg, var(--accent), var(--border), transparent);
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 3rem;
+    padding-left: 2rem;
+  }
+  .timeline-dot {
+    position: absolute; left: -2.4rem; top: 0.4rem;
+    width: 10px; height: 10px;
+    background: var(--accent); border: 2px solid var(--bg);
+    border-radius: 50%;
+  }
+  .timeline-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem; color: var(--accent);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .timeline-company {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem; font-weight: 700;
+    color: var(--white); margin-bottom: 0.25rem;
+  }
+  .timeline-role {
+    font-size: 0.85rem; color: var(--muted);
+    margin-bottom: 1rem; font-style: italic;
+  }
+  .timeline-bullets { list-style: none; }
+  .timeline-bullets li {
+    font-size: 0.88rem; color: var(--text);
+    padding: 0.3rem 0; padding-left: 1.2rem;
+    position: relative; line-height: 1.6;
+  }
+  .timeline-bullets li::before {
+    content: '-'; position: absolute; left: 0;
+    color: var(--accent); font-size: 0.7rem;
+  }
+ 
+  /* PROJECTS */
+  #projects { background: var(--surface); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--bg); border: 1px solid var(--border);
+    overflow: hidden; transition: border-color 0.25s, transform 0.25s;
+    position: relative;
+  }
+  .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .project-card-header {
+    padding: 1.8rem 1.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between;
+    gap: 1rem;
+  }
+  .project-badge {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem; font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .badge-hf { background: rgba(255,166,0,0.1); color: #ffa600; border: 1px solid rgba(255,166,0,0.3); }
+  .badge-research { background: rgba(16,185,129,0.1); color: var(--green); border: 1px solid rgba(16,185,129,0.3); }
+  .badge-wip { background: rgba(245,158,11,0.1); color: var(--orange); border: 1px solid rgba(245,158,11,0.3); }
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem; font-weight: 700;
+    color: var(--white); line-height: 1.3;
+  }
+  .project-body { padding: 1.2rem 1.8rem; }
+  .project-desc {
+    font-size: 0.85rem; color: var(--muted);
+    line-height: 1.7; margin-bottom: 1.2rem;
+  }
+  .project-metrics {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+  }
+  .metric {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem; color: var(--green);
+    background: rgba(16,185,129,0.08);
+    border: 1px solid rgba(16,185,129,0.2);
+    padding: 0.3rem 0.7rem;
+  }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.5rem; }
+  .project-card-footer {
+    padding: 1rem 1.8rem 1.8rem;
+    display: flex; gap: 0.75rem; flex-wrap: wrap;
+  }
+  .btn-demo {
+    flex: 1; text-align: center;
+    background: var(--accent); color: var(--bg);
+    padding: 0.75rem 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+    cursor: pointer; border: none;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+  .btn-demo:hover { background: var(--accent2); }
+  .btn-demo.disabled {
+    background: var(--surface2); color: var(--muted);
+    cursor: not-allowed; clip-path: none;
+  }
+  .btn-demo.disabled:hover { background: var(--surface2); }
+  .btn-code {
+    padding: 0.75rem 1.2rem;
+    background: transparent; color: var(--muted);
+    border: 1px solid var(--border);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.2s; cursor: pointer;
+  }
+  .btn-code:hover { border-color: var(--accent); color: var(--accent); }
+ 
+  /* MODAL HuggingFace embed */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 999;
+    background: rgba(6,12,20,0.93);
+    backdrop-filter: blur(8px);
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--surface); border: 1px solid var(--border);
+    width: 90vw; max-width: 900px; max-height: 90vh;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .modal-header {
+    padding: 1.2rem 1.8rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .modal-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem; font-weight: 700; color: var(--white);
+  }
+  .modal-close {
+    background: none; border: none; color: var(--muted);
+    font-size: 1.4rem; cursor: pointer; transition: color 0.2s;
+    line-height: 1;
+  }
+  .modal-close:hover { color: var(--white); }
+  .modal-body { flex: 1; overflow: auto; }
+  .modal-body iframe {
+    width: 100%; height: 600px; border: none;
+    background: white;
+  }
+  .modal-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 400px; gap: 1.5rem; padding: 2rem; text-align: center;
+  }
+  .modal-placeholder-icon { font-size: 3rem; }
+  .modal-placeholder-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem; font-weight: 700; color: var(--white);
+  }
+  .modal-placeholder-desc { font-size: 0.85rem; color: var(--muted); max-width: 400px; line-height: 1.7; }
+  .modal-placeholder-input {
+    display: flex; gap: 0.75rem; width: 100%; max-width: 460px; flex-wrap: wrap;
+  }
+  .modal-placeholder-input input {
+    flex: 1; background: var(--bg); border: 1px solid var(--border);
+    color: var(--text); padding: 0.7rem 1rem;
+    font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .modal-placeholder-input input:focus { border-color: var(--accent); }
+  .modal-placeholder-input input::placeholder { color: var(--muted); }
+ 
+  /* EDUCATION */
+  .edu-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .edu-card {
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 1.5rem;
+  }
+  .edu-year {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem; color: var(--accent);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem; font-weight: 700; color: var(--white);
+    margin-bottom: 0.3rem; line-height: 1.4;
+  }
+  .edu-school { font-size: 0.82rem; color: var(--muted); }
+ 
+  /* CONTACT */
+  #contact { background: var(--surface); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .contact-info h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem; font-weight: 800; color: var(--white);
+    margin-bottom: 1rem; line-height: 1.3;
+  }
+  .contact-info p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+  .contact-items { display: flex; flex-direction: column; gap: 0.9rem; }
+  .contact-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem; color: var(--text);
+  }
+  .contact-item-icon { color: var(--accent); font-size: 1rem; }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: flex; gap: 1rem; }
+  .form-field { flex: 1; display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-field label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem; color: var(--muted);
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .form-field input, .form-field textarea {
+    background: var(--bg); border: 1px solid var(--border);
+    color: var(--text); padding: 0.75rem 1rem;
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 0.85rem;
+    outline: none; transition: border-color 0.2s; resize: none;
+  }
+  .form-field input:focus, .form-field textarea:focus { border-color: var(--accent); }
+  .form-field input::placeholder, .form-field textarea::placeholder { color: var(--muted); }
+ 
+  /* FOOTER */
+  footer {
+    padding: 2.5rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem; color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+ 
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+ 
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .form-row { flex-direction: column; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+ 
+  /* HF badge pulse */
+  .hf-live::after {
+    content: ''; display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%; background: var(--green);
+    margin-left: 6px; animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AH<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projects">Projets ML</a></li>
+    <li><a href="#experience">Expériences</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:atilliohoungue@gmail.com" class="nav-cta">Me contacter</a>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Disponible dès le 28 septembre 2026</div>
+    <h1 class="hero-title">
+      Atillio<br>
+      <span class="line2">HOUNGUE</span>
+    </h1>
+    <p class="hero-desc">
+      Profil Data Analyst & Data Scientist Junior alliant rigueur analytique et expertise ML appliquée. Capable de concevoir des pipelines data complets, d'entraîner des modèles prédictifs en production et de valoriser les données pour la prise de décision métier. Disponible dès le 28 septembre 2026.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">Voir les modèles ML</a>
+      <a href="#experience" class="btn-secondary">Parcours</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">0.008</div>
+        <div class="stat-label">ECE après calibration</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">30%</div>
+        <div class="stat-label">Gain reporting bancaire</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Années d'expérience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">BAC+5</div>
+        <div class="stat-label">Data Engineering</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-in">
+    <div class="section-tag">Stack Technique</div>
+    <h2 class="section-title">Compétences & Technologies</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon"></div>
+      <div class="skill-card-title">Machine Learning & Scoring</div>
+      <div class="skill-tags">
+        <span class="tag">XGBoost</span><span class="tag">LightGBM</span>
+        <span class="tag">Sklearn</span><span class="tag">SHAP</span>
+        <span class="tag">Platt Scaling</span><span class="tag">Isotonic</span>
+        <span class="tag">Cross-Validation</span><span class="tag">Feature Engineering</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon"></div>
+      <div class="skill-card-title">IA Générative & LLM</div>
+      <div class="skill-tags">
+        <span class="tag">Mistral AI</span><span class="tag">Prompt Engineering</span>
+        <span class="tag">Pipeline OCR-LLM</span><span class="tag">NLP</span>
+        <span class="tag">Extraction d'entités</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon"></div>
+      <div class="skill-card-title">Data Engineering & Cloud</div>
+      <div class="skill-tags">
+        <span class="tag">Python</span><span class="tag">SQL</span>
+        <span class="tag">Pandas</span><span class="tag">NumPy</span>
+        <span class="tag">Docker</span><span class="tag">Airflow</span>
+        <span class="tag">Spark</span><span class="tag">Azure</span>
+        <span class="tag">AWS</span><span class="tag">Kubernetes</span><span class="tag">Git</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon"></div>
+      <div class="skill-card-title">Data Analysis & Visualisation</div>
+      <div class="skill-tags">
+        <span class="tag">Power BI</span><span class="tag">Tableau</span>
+        <span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
+        <span class="tag">Plotly</span><span class="tag">Streamlit</span>
+        <span class="tag">Excel</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon"></div>
+      <div class="skill-card-title">Statistiques & Mathématiques</div>
+      <div class="skill-tags">
+        <span class="tag">Probabilités</span><span class="tag">Inférence statistique</span>
+        <span class="tag">Optimisation</span><span class="tag">ECE</span>
+        <span class="tag">Calibration probabiliste</span>
+      </div>
+    </div>
+    <div class="skill-card fade-in">
+      <div class="skill-card-icon"></div>
+      <div class="skill-card-title">Pratiques Agiles & Soft Skills</div>
+      <div class="skill-tags">
+        <span class="tag">Scrum</span><span class="tag">Kanban</span>
+        <span class="tag">Trello</span><span class="tag">Daily Stand-ups</span>
+        <span class="tag">Communication</span><span class="tag">Travail en équipe</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-in">
+    <div class="section-tag">Modèles en production</div>
+    <h2 class="section-title">Projets Machine Learning</h2>
+    <p style="color:var(--muted); font-size:0.9rem; margin-top:0.75rem; max-width:580px;">
+      Cliquez sur <strong style="color:var(--accent)">Tester le modèle</strong> pour lancer l'interface interactive hébergée sur Hugging Face Spaces.
+    </p>
+  </div>
+  <div class="projects-grid">
+ 
+    <!-- PROJECT 1 — Méta-modèle Mémoire M2 -->
+    <div class="project-card fade-in">
+      <div class="project-card-header">
+        <div class="project-title">Méta-modèle de Scoring de Confiance OCR-LLM</div>
+        <span class="project-badge badge-wip">Bientôt disponible</span>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">
+          Estimateur de confiance supervisé (XGBoost + Platt Scaling) entraîné sur les signaux internes d'un pipeline OCR-LLM (Mistral AI) pour l'extraction de champs juridiques dans des certificats d'urbanisme. Optimisation par matrice de coût métier, interprétabilité SHAP et monitoring de dérive.
+        </p>
+        <div class="project-metrics">
+          <span class="metric">ECE: 0.31 → 0.008</span>
+          <span class="metric">XGBoost + Platt</span>
+          <span class="metric">Auto-validation</span>
+        </div>
+        <div class="project-stack">
+          <span class="tag">XGBoost</span><span class="tag">Mistral AI</span>
+          <span class="tag">SHAP</span><span class="tag">Platt Scaling</span>
+          <span class="tag">Streamlit</span><span class="tag">Docker</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <button class="btn-demo disabled" disabled>Bientôt disponible</button>
+        <a class="btn-code disabled" style="pointer-events:none; color:var(--muted); border-color:var(--border);">{"</>"}</a>
+      </div>
+    </div>
+ 
+    <!-- PROJECT 2 — Risque crédit -->
+    <div class="project-card fade-in">
+      <div class="project-card-header">
+        <div class="project-title">Modèle Prédictif de Risque de Crédit</div>
+        <span class="project-badge badge-hf hf-live">HF Space</span>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">
+          Algorithme de scoring bancaire entraîné sur des données financières réelles pour anticiper les risques de défaut de crédit. Intègre des variables comportementales, des ratios financiers et une analyse de tendances temporelles.
+        </p>
+        <div class="project-metrics">
+          <span class="metric">AUC-ROC: à compléter</span>
+          <span class="metric">LightGBM</span>
+        </div>
+        <div class="project-stack">
+          <span class="tag">LightGBM</span><span class="tag">Sklearn</span>
+          <span class="tag">Pandas</span><span class="tag">Power BI</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <button class="btn-demo" onclick="openModal('modal-hf', 'https://huggingface.co/spaces/atillio-houngue/credit-risk', 'Risque de Crédit')">Tester le modèle</button>
+        <a href="#" class="btn-code">{'</>'}</a>
+      </div>
+    </div>
+ 
+    <!-- PROJECT 3 — Dashboard Streamlit -->
+    <div class="project-card fade-in">
+      <div class="project-card-header">
+        <div class="project-title">Dashboard Monitoring Extractions LLM</div>
+        <span class="project-badge badge-hf hf-live">HF Space</span>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">
+          Interface Streamlit de monitoring temps réel des extractions OCR-LLM. Visualise la confiance par champ, détecte les dérives de distribution et permet la validation humaine des cas incertains via une interface claire.
+        </p>
+        <div class="project-metrics">
+          <span class="metric">Temps réel</span>
+          <span class="metric">Drift detection</span>
+        </div>
+        <div class="project-stack">
+          <span class="tag">Streamlit</span><span class="tag">Plotly</span>
+          <span class="tag">Python</span><span class="tag">Docker</span><span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <button class="btn-demo" onclick="openModal('modal-hf', 'https://huggingface.co/spaces/atillio-houngue/llm-monitoring', 'Dashboard LLM Monitoring')">Tester le modèle</button>
+        <a href="#" class="btn-code">{'</>'}</a>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 — Car Price Predictor -->
+    <div class="project-card fade-in">
+      <div class="project-card-header">
+        <div class="project-title">Prédiction de Prix de Voitures</div>
+        <span class="project-badge badge-hf hf-live">HF Space</span>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">
+          Modèle de régression qui estime le prix d'un véhicule à partir de caractéristiques (marque, kilométrage, puissance, carburant, année, etc.). Interface Hugging Face prête à l'emploi pour tester des scénarios et obtenir le prix prédit en temps réel.
+        </p>
+        <div class="project-metrics">
+          <span class="metric">Régression</span>
+          <span class="metric">HF Space prêt</span>
+        </div>
+        <div class="project-stack">
+          <span class="tag">Scikit-learn</span><span class="tag">Python</span>
+          <span class="tag">Pandas</span><span class="tag">Gradio</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <button class="btn-demo" onclick="openModal('modal-hf', 'https://huggingface.co/spaces/a126OPS/car-price-predictor-demo/embed', 'Car Price Predictor')">Tester le modèle</button>
+        <a href="https://huggingface.co/spaces/a126OPS/car-price-predictor-demo" target="_blank" class="btn-code">{'</>'}</a>
+      </div>
+    </div>
+
+    <!-- PROJECT PLACEHOLDER — À ajouter -->
+    <div class="project-card fade-in" style="border-style: dashed; opacity: 0.6;">
+      <div class="project-card-header">
+        <div class="project-title" style="color:var(--muted);">+ Ajouter un nouveau projet</div>
+        <span class="project-badge badge-wip">En cours</span>
+      </div>
+      <div class="project-body">
+        <p class="project-desc" style="color:var(--muted);">
+          Déployez un nouveau modèle sur Hugging Face Spaces et collez l'URL ici pour l'intégrer automatiquement à votre portfolio.
+        </p>
+        <div class="project-stack">
+          <span class="tag" style="opacity:0.5;">Hugging Face</span>
+          <span class="tag" style="opacity:0.5;">Gradio</span>
+          <span class="tag" style="opacity:0.5;">Streamlit</span>
+        </div>
+      </div>
+      <div class="project-card-footer">
+        <button class="btn-demo disabled" disabled>Bientôt disponible</button>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; flex-wrap:wrap;" class="exp-layout">
+    <div>
+      <div class="section-header fade-in">
+        <div class="section-tag">Parcours</div>
+        <h2 class="section-title">Expériences</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Depuis octobre 2025</div>
+          <div class="timeline-company">QUAI DES NOTAIRES</div>
+          <div class="timeline-role">Data Engineer / Data Scientist — Autun</div>
+          <ul class="timeline-bullets">
+            <li>Développement d'un pipeline OCR-LLM (Mistral AI) pour l'extraction de champs juridiques dans des certificats d'urbanisme</li>
+            <li>Entraînement d'un méta-modèle ML (XGBoost) pour scorer la fiabilité de chaque extraction → auto-validation ou renvoi humain</li>
+            <li>Prompt engineering comparatif (Mistral Small/Medium/Large), optimisation itérative</li>
+            <li>Dashboard Streamlit : monitoring temps réel + interface de validation humaine</li>
+            <li>Stack : Python · Docker · Airflow · Mistral AI · XGBoost · SHAP · API REST</li>
+          </ul>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Depuis juillet 2024</div>
+          <div class="timeline-company">ECOBANK</div>
+          <div class="timeline-role">Data Analyst — Cotonou, Bénin</div>
+          <ul class="timeline-bullets">
+            <li>Analyse de données financières en SQL et Python pour l'optimisation des processus bancaires</li>
+            <li>Développement d'algorithmes prédictifs pour anticiper les risques de crédit</li>
+            <li>Automatisation de reporting via Power BI, réduisant le temps de traitement de 30%</li>
+            <li>Gestion de la conformité RGPD et analyse des risques liés aux transactions</li>
+          </ul>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Mai 2023 — Août 2023</div>
+          <div class="timeline-company">BANK OF AFRICA</div>
+          <div class="timeline-role">Développeur Web — Cotonou, Bénin</div>
+          <ul class="timeline-bullets">
+            <li>Développement et sécurisation des applications bancaires en ligne</li>
+            <li>Optimisation des bases de données SQL pour améliorer la rapidité des requêtes</li>
+            <li>Intégration de solutions d'authentification renforcée</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-header fade-in">
+        <div class="section-tag">Formation</div>
+        <h2 class="section-title">Diplômes</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card fade-in">
+          <div class="edu-year">Depuis oct. 2025</div>
+          <div class="edu-degree">BAC+5 Data Engineer</div>
+          <div class="edu-school">AMDF — Autun</div>
+        </div>
+        <div class="edu-card fade-in">
+          <div class="edu-year">Oct. 2024 — Mai 2025</div>
+          <div class="edu-degree">BAC+4 Architecture des SI (Option Data Analyst)</div>
+          <div class="edu-school">Ecole-IT — Orléans, France</div>
+        </div>
+        <div class="edu-card fade-in">
+          <div class="edu-year">Sept. 2020 — Sept. 2023</div>
+          <div class="edu-degree">Licence Pro Systèmes Informatiques & Logiciels</div>
+          <div class="edu-school">ESGIS — Cotonou, Bénin · Certifié ENIC NARIC France</div>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem;" class="fade-in">
+        <div class="section-tag" style="margin-bottom:1rem;">Langues & Intérêts</div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+          <span class="tag">Français — Natif</span>
+          <span class="tag">Anglais — B2</span>
+        </div>
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <span class="tag">Football</span>
+          <span class="tag">Padel</span>
+          <span class="tag">Formule 1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info fade-in">
+      <h3>Travaillons<br><span style="color:var(--accent)">ensemble.</span></h3>
+      <p>Disponible pour un CDI dès le 28 septembre 2026. Télétravail ou présentiel partout en France.</p>
+      <div class="contact-items">
+        <div class="contact-item"><span class="contact-item-icon"></span> atilliohoungue@gmail.com</div>
+        <div class="contact-item"><span class="contact-item-icon"></span> 07 45 09 28 92</div>
+        <div class="contact-item"><span class="contact-item-icon"></span> Autun (71400) — Mobile sur toute la France</div>
+        <div class="contact-item"><span class="contact-item-icon"></span> Permis B · Télétravail ou présentiel</div>
+      </div>
+    </div>
+    <div class="contact-form fade-in">
+      <div class="form-row">
+        <div class="form-field"><label>Nom</label><input type="text" placeholder="Votre nom"/></div>
+        <div class="form-field"><label>Email</label><input type="email" placeholder="votre@email.com"/></div>
+      </div>
+      <div class="form-field"><label>Sujet</label><input type="text" placeholder="Opportunité, collaboration..."/></div>
+      <div class="form-field"><label>Message</label><textarea rows="5" placeholder="Décrivez votre projet ou opportunité..."></textarea></div>
+      <button class="btn-primary" style="align-self:flex-start;" onclick="alert('Message envoyé ! Atillio vous répondra rapidement.')">Envoyer le message</button>
+    </div>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-text">© 2026 Atillio HOUNGUE — Data Scientist & ML Engineer</div>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/atillio-houngue-245715331" target="_blank">LinkedIn</a>
+    <a href="https://github.com/a126OPS" target="_blank">GitHub</a>
+    <a href="https://huggingface.co/a126OPS" target="_blank">Hugging Face</a>
+  </div>
+</footer>
+ 
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-1" onclick="closeModal(event, 'modal-1')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">Méta-modèle Scoring de Confiance OCR-LLM</div>
+      <button class="modal-close" onclick="closeModalById('modal-1')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-placeholder">
+        <div class="modal-placeholder-icon"></div>
+        <div class="modal-placeholder-title">Déployez votre modèle sur Hugging Face</div>
+        <div class="modal-placeholder-desc">
+          Pour tester ce modèle directement ici, déployez votre Space Gradio ou Streamlit sur Hugging Face et collez l'URL ci-dessous. L'interface s'intégrera automatiquement.
+        </div>
+        <div class="modal-placeholder-input">
+          <input type="text" placeholder="https://huggingface.co/spaces/votre-username/votre-space" id="hf-url-1"/>
+          <button class="btn-demo" onclick="loadHFSpace('hf-url-1', 'modal-1')">Charger</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal-overlay" id="modal-hf" onclick="closeModal(event, 'modal-hf')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-hf-title">Modèle Hugging Face</div>
+      <button class="modal-close" onclick="closeModalById('modal-hf')">×</button>
+    </div>
+    <div class="modal-body" id="modal-hf-body">
+      <div class="modal-placeholder">
+        <div class="modal-placeholder-icon"></div>
+        <div class="modal-placeholder-title">Space Hugging Face</div>
+        <div class="modal-placeholder-desc">
+          Collez l'URL de votre Hugging Face Space pour charger l'interface interactive directement dans ce portfolio.
+        </div>
+        <div class="modal-placeholder-input">
+          <input type="text" placeholder="https://huggingface.co/spaces/..." id="hf-url-generic"/>
+          <button class="btn-demo" onclick="loadHFSpaceGeneric()">Charger</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<script>
+  // Intersection Observer for fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+ 
+  // Modal functions
+  function openModal(id, url, title) {
+    if (url && title) {
+      document.getElementById('modal-hf-title').textContent = title;
+      document.getElementById('hf-url-generic').value = url;
+      document.getElementById('modal-hf-body').innerHTML = `
+        <div class="modal-placeholder">
+          <div class="modal-placeholder-icon"></div>
+          <div class="modal-placeholder-title">${title}</div>
+          <div class="modal-placeholder-desc">
+            Remplacez l'URL ci-dessous par l'URL réelle de votre Hugging Face Space pour charger l'interface.
+          </div>
+          <div class="modal-placeholder-input">
+            <input type="text" value="${url}" id="hf-url-generic" style="flex:1"/>
+            <button class="btn-demo" onclick="loadHFSpaceGeneric()">Charger</button>
+          </div>
+        </div>`;
+    }
+    document.getElementById(id).classList.add('open');
+  }
+ 
+  function closeModal(event, id) {
+    if (event.target.classList.contains('modal-overlay')) {
+      document.getElementById(id).classList.remove('open');
+    }
+  }
+ 
+  function closeModalById(id) {
+    document.getElementById(id).classList.remove('open');
+  }
+ 
+  function loadHFSpace(inputId, modalId) {
+    const url = document.getElementById(inputId).value.trim();
+    if (!url) return;
+    const body = document.getElementById(modalId).querySelector('.modal-body');
+    body.innerHTML = `<iframe src="${url}" allow="accelerometer; camera; microphone; clipboard-read; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>`;
+  }
+ 
+  function loadHFSpaceGeneric() {
+    const url = document.getElementById('hf-url-generic').value.trim();
+    if (!url) return;
+    document.getElementById('modal-hf-body').innerHTML =
+      `<iframe src="${url}" allow="accelerometer; camera; microphone; clipboard-read; clipboard-write; encrypted-media; gyroscope; picture-in-picture" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>`;
+  }
+ 
+  // ESC key closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => m.classList.remove('open'));
+    }
+  });
+ 
+  // Responsive exp layout
+  const expLayout = document.querySelector('.exp-layout');
+  function checkLayout() {
+    if (window.innerWidth < 900) {
+      expLayout.style.gridTemplateColumns = '1fr';
+      expLayout.style.gap = '3rem';
+    } else {
+      expLayout.style.gridTemplateColumns = '1fr 1fr';
+      expLayout.style.gap = '5rem';
+    }
+  }
+  checkLayout(); window.addEventListener('resize', checkLayout);
+</script>
+</body>
+</html>
