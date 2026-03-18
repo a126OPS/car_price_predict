@@ -1,15 +1,14 @@
-import gradio as gr
-import pandas as pd
-import numpy as np
-import joblib
 import os
 import sys
 from datetime import datetime
+
+import gradio as gr
+import joblib
+import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
-# Custom transformer used inside the saved pipelines.
-# It must be defined before calling joblib.load so pickle can resolve it.
+# Custom transformer used inside the saved pipelines
 class FeatureEngineer(BaseEstimator, TransformerMixin):
     def fit(self, X, y=None):
         return self
@@ -22,67 +21,68 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
         X["est_recente"] = (X["age_vehicule"] <= 5).astype(int)
         return X.drop(columns=["annee"])
 
-# Make the class discoverable even when this module is imported (pickle expects __main__.FeatureEngineer).
+
+# Make the class discoverable during unpickling (__main__.FeatureEngineer)
 sys.modules.setdefault("__main__", sys.modules[__name__]).FeatureEngineer = FeatureEngineer
 
-# ── Chargement du modèle ──────────────────────────────────────────────────────
-# On préfère XGBoost, sinon LR en fallback
+
+# Model loading (prefers XGBoost, falls back to linear regression)
 MODEL_PATH_XGB = "best_pipeline_xgb.joblib"
-MODEL_PATH_LR  = "best_pipeline_lr.joblib"
+MODEL_PATH_LR = "best_pipeline_lr.joblib"
 
 if os.path.exists(MODEL_PATH_XGB):
     pipeline = joblib.load(MODEL_PATH_XGB)
     MODEL_NAME = "XGBoost"
 elif os.path.exists(MODEL_PATH_LR):
     pipeline = joblib.load(MODEL_PATH_LR)
-    MODEL_NAME = "Régression Linéaire"
+    MODEL_NAME = "Régression linéaire"
 else:
-    raise FileNotFoundError("Aucun modèle trouvé. Assurez-vous d'uploader best_pipeline_xgb.joblib")
+    raise FileNotFoundError("Aucun modèle trouvé. Ajoutez best_pipeline_xgb.joblib ou best_pipeline_lr.joblib.")
 
 print(f"[OK] Modèle chargé : {MODEL_NAME}")
 
-# ── Fonction de prédiction ────────────────────────────────────────────────────
+
 def predire_prix(
     marque, annee, kilometrage, puissance_cv,
     nb_portes, carburant, transmission,
     etat, nb_proprietaires, consommation
 ):
+    """Retourne le prix estimé et un récapitulatif formaté."""
     voiture = pd.DataFrame([{
-        'marque'             : marque,
-        'annee'              : int(annee),
-        'kilometrage'        : float(kilometrage),
-        'puissance_cv'       : float(puissance_cv),
-        'nb_portes'          : int(nb_portes),
-        'carburant'          : carburant,
-        'transmission'       : transmission,
-        'etat'               : etat,
-        'nb_proprietaires'   : int(nb_proprietaires),
-        'consommation_L100km': float(consommation)
+        "marque": marque,
+        "annee": int(annee),
+        "kilometrage": float(kilometrage),
+        "puissance_cv": float(puissance_cv),
+        "nb_portes": int(nb_portes),
+        "carburant": carburant,
+        "transmission": transmission,
+        "etat": etat,
+        "nb_proprietaires": int(nb_proprietaires),
+        "consommation_L100km": float(consommation),
     }])
 
-    prix = pipeline.predict(voiture)[0]
-    prix = max(500, prix)  # garde-fou
+    prix = float(pipeline.predict(voiture)[0])
+    prix = max(500.0, prix)  # garde-fou
 
-    MAE      = 4500
-    prix_min = max(0, prix - MAE)
-    prix_max = prix + MAE
+    mae = 4500
+    prix_min = max(0.0, prix - mae)
+    prix_max = prix + mae
 
-    MEDIANE  = 23000
-    if prix < MEDIANE * 0.85:
+    med = 23000
+    if prix < med * 0.85:
         scoring = "BONNE AFFAIRE"
         conseil = "Ce prix est en dessous de la médiane du marché."
-    elif prix < MEDIANE * 1.15:
+    elif prix < med * 1.15:
         scoring = "PRIX CORRECT"
         conseil = "Ce prix est dans la fourchette normale du marché."
     else:
         scoring = "PRIX ÉLEVÉ"
         conseil = "Ce prix est au-dessus de la médiane du marché."
 
-    current_year = datetime.now().year
-    age = current_year - int(annee)
+    age = datetime.now().year - int(annee)
     km_par_an = float(kilometrage) / max(age, 1)
 
-    resultat = f"""
+    recap = f"""
 ## Prix estimé : **{prix:,.0f} €**
 
 ---
@@ -113,12 +113,11 @@ def predire_prix(
 | Consommation    | {float(consommation)} L/100km |
 
 ---
-*Modèle : {MODEL_NAME} — Marge d'erreur : ±{MAE:,} €*
+*Modèle : {MODEL_NAME} — Marge d'erreur : ±{mae:,} €*
 """
-    return float(prix), resultat
+    return prix, recap
 
 
-# ── Interface Gradio ──────────────────────────────────────────────────────────
 with gr.Blocks(
     title="Estimateur de Prix Voiture — Atillio HOUNGUE",
     theme=gr.themes.Soft(),
@@ -160,8 +159,8 @@ with gr.Blocks(
         with gr.Column(scale=1):
             gr.Markdown("### Informations générales")
             marque = gr.Dropdown(
-                choices=['Toyota','BMW','Mercedes','Renault','Peugeot',
-                         'Audi','Ford','Volkswagen','Honda','Nissan'],
+                choices=["Toyota", "BMW", "Mercedes", "Renault", "Peugeot",
+                         "Audi", "Ford", "Volkswagen", "Honda", "Nissan"],
                 label="Marque", value="Renault"
             )
             annee = gr.Slider(minimum=2005, maximum=2024, value=2018, step=1, label="Année")
@@ -173,12 +172,12 @@ with gr.Blocks(
             gr.Markdown("### Caractéristiques techniques")
             puissance_cv = gr.Slider(minimum=70, maximum=400, value=120, step=5, label="Puissance (cv)")
             carburant = gr.Dropdown(
-                choices=['Essence','Diesel','Hybride','Électrique'],
+                choices=["Essence", "Diesel", "Hybride", "Électrique"],
                 label="Carburant", value="Essence"
             )
-            transmission = gr.Radio(choices=['Manuelle','Automatique'], value="Manuelle", label="Transmission")
+            transmission = gr.Radio(choices=["Manuelle", "Automatique"], value="Manuelle", label="Transmission")
             etat = gr.Dropdown(
-                choices=['Mauvais','Passable','Bon','Très bon','Neuf'],
+                choices=["Mauvais", "Passable", "Bon", "Très bon", "Neuf"],
                 value="Bon", label="État du véhicule"
             )
             consommation = gr.Slider(minimum=0.0, maximum=15.0, value=6.5, step=0.1, label="Consommation (L/100km)")
@@ -201,20 +200,5 @@ with gr.Blocks(
         outputs=[prix_brut, output]
     )
 
-    gr.Markdown("---\n### Exemples rapides")
-    gr.Examples(
-        examples=[
-            ["BMW",      2020, 45000,  190, 4, "Essence",     "Automatique", "Très bon", 1, 7.2],
-            ["Renault",  2015, 120000,  90, 5, "Diesel",      "Manuelle",    "Bon",      2, 5.5],
-            ["Mercedes", 2022, 15000,  300, 4, "Hybride",     "Automatique", "Neuf",     1, 6.8],
-            ["Peugeot",  2010, 180000,  75, 5, "Essence",     "Manuelle",    "Passable", 3, 7.0],
-            ["Toyota",   2019, 60000,  130, 5, "Électrique",  "Automatique", "Très bon", 1, 0.0],
-        ],
-        inputs=[marque, annee, kilometrage, puissance_cv,
-                nb_portes, carburant, transmission,
-                etat, nb_proprietaires, consommation]
-    )
-
-# ── Lancement ─────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     demo.launch()
