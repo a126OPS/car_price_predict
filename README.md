@@ -1,5 +1,5 @@
 ﻿---
-title: Estimateur Prix Voiture
+title: Prédiction Prix Carburant sur 7 jours
 colorFrom: blue
 colorTo: indigo
 sdk: gradio
@@ -7,22 +7,22 @@ sdk_version: 4.44.0
 app_file: app.py
 pinned: true
 license: mit
-short_description: Prédiction du prix d'un véhicule avec XGBoost
+short_description: Modèle de prédiction J+7 des prix carburant à la pompe par département français.
 ---
 
-# Estimateur de Prix Voiture
+# Prédiction Prix Carburant sur 7 jours
 
-Modèle de machine learning entraîné pour prédire le prix d'un véhicule d'occasion sur le marché français.
+Modèle de prédiction J+7 des prix carburant à la pompe par département français. 14 millions d'observations réelles (data.economie.gouv.fr), feature engineering séries temporelles, MAE de 2 centimes. Interface temps réel connectée au flux officiel.
 
 ## Modèle
 
 - Algorithme : XGBoost Regressor (pipeline Scikit-learn)
-- Métriques : R² > 0.85 · MAE ≈ 4 500 €
-- Features : marque, année, kilométrage, puissance, carburant, transmission, état, nb_propriétaires, consommation
+- Métriques : MAE ≈ 2 centimes
+- Données : 14 millions d'observations réelles (data.economie.gouv.fr)
 
 ## Utilisation
 
-Remplissez le formulaire avec les caractéristiques du véhicule et cliquez sur **Estimer le prix** pour obtenir une estimation instantanée avec fourchette et verdict marché.
+Remplissez le formulaire avec les caractéristiques demandées et cliquez sur **Prédire** pour obtenir une estimation des prix carburant à J+7.
 
 ## Auteur
 

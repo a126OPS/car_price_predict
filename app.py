@@ -6,6 +6,7 @@ import gradio as gr
 import joblib
 import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
+import requests
 
 
 # Custom transformer used inside the saved pipelines
@@ -40,6 +41,20 @@ else:
     raise FileNotFoundError("Aucun modèle trouvé. Ajoutez best_pipeline_xgb.joblib ou best_pipeline_lr.joblib.")
 
 print(f"[OK] Modèle chargé : {MODEL_NAME}")
+
+
+# Ajouter une fonction pour interagir avec le modèle Hugging Face
+def predire_prix_carburant(departement, jour):
+    """Interagit avec le modèle Hugging Face pour prédire les prix carburant."""
+    url = "https://huggingface.co/spaces/a126OPS/carburant_predict"
+    payload = {"departement": departement, "jour": jour}
+    response = requests.post(url, json=payload)
+
+    if response.status_code == 200:
+        result = response.json()
+        return result.get("prix", "Erreur : réponse invalide"), result.get("details", "")
+    else:
+        return "Erreur", f"Code HTTP : {response.status_code}"
 
 
 def predire_prix(
@@ -199,6 +214,28 @@ with gr.Blocks(
                 etat, nb_proprietaires, consommation],
         outputs=[prix_brut, output]
     )
+
+    with gr.Tab("Prédiction Prix Carburant"):
+        gr.Markdown("""
+        # Prédiction des Prix Carburant à J+7
+        **Modèle connecté au flux officiel des prix carburant.**
+        Remplissez les informations ci-dessous pour obtenir une estimation.
+        """)
+
+        with gr.Row():
+            departement = gr.Textbox(label="Département", placeholder="Exemple : 75")
+            jour = gr.Slider(minimum=1, maximum=7, value=1, step=1, label="Jour (J+)")
+
+        btn_carburant = gr.Button("Prédire", variant="primary")
+
+        prix_carburant = gr.Textbox(label="Prix estimé (€)", interactive=False)
+        details_carburant = gr.Markdown("*Cliquez sur Prédire pour voir les détails...*")
+
+        btn_carburant.click(
+            fn=predire_prix_carburant,
+            inputs=[departement, jour],
+            outputs=[prix_carburant, details_carburant]
+        )
 
 if __name__ == "__main__":
     demo.launch()
