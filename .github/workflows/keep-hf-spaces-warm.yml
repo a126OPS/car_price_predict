@@ -1,0 +1,64 @@
+name: Keep Hugging Face Spaces Warm
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/keep-hf-spaces-warm.yml"
+      - "docs/index.html"
+      - "atillio_portfolio.html"
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  warm-spaces:
+    name: Warm ${{ matrix.space_id }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - space_id: a126OPS/car-price-predictor-demo
+            start_url: https://huggingface.co/spaces/a126OPS/car-price-predictor-demo/start
+            host_url: https://a126ops-car-price-predictor-demo.hf.space/
+          - space_id: a126OPS/prediction_immo_soane_et_loirePS
+            start_url: https://huggingface.co/spaces/a126OPS/prediction_immo_soane_et_loirePS/start
+            host_url: https://a126ops-prediction-immo-soane-et-loireps.hf.space/
+          - space_id: a126OPS/carburant_predict
+            start_url: https://huggingface.co/spaces/a126OPS/carburant_predict/start
+            host_url: https://a126ops-carburant-predict.hf.space/
+          - space_id: a126OPS/conso_energie_predict
+            start_url: https://huggingface.co/spaces/a126OPS/conso_energie_predict/start
+            host_url: https://a126ops-conso-energie-predict.hf.space/
+
+    steps:
+      - name: Trigger wake-up
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -sS -X POST "${{ matrix.start_url }}" -o /dev/null
+
+      - name: Wait until the app answers
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for attempt in {1..12}; do
+            code="$(curl -L -sS -o /dev/null -m 15 -w '%{http_code}' "${{ matrix.host_url }}" || true)"
+            echo "attempt=${attempt} code=${code}"
+
+            if [ "${code}" = "200" ]; then
+              echo "Space is ready."
+              exit 0
+            fi
+
+            sleep 10
+          done
+
+          echo "The Space did not become ready in time."
+          exit 1
