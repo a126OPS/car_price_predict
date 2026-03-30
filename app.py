@@ -337,8 +337,6 @@ def build_gradio_app() -> gr.Blocks:
             **Modele ML entraine sur des donnees reelles du marche francais**
 
             Remplissez le formulaire ci-dessous pour obtenir une estimation instantanee du prix d'un vehicule.
-
-            API JSON disponible sur `/api/predict` et documentation automatique sur `/docs`.
             """
         )
 
