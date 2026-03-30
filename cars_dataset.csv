@@ -1,0 +1,516 @@
+marque,annee,kilometrage,puissance_cv,nb_portes,carburant,transmission,etat,nb_proprietaires,consommation_L100km,prix
+Ford,2013,178595.0,374.0,2,Hybride,Automatique,Bon,4.0,9.6,35837
+Renault,2021,124085.0,209.0,5,Essence,Automatique,Passable,3.0,8.3,22458
+Volkswagen,2021,,256.0,2,Hybride,Manuelle,Mauvais,1.0,,180000
+Peugeot,2020,19256.0,362.0,2,Hybride,Manuelle,Mauvais,1.0,12.4,38532
+Ford,2017,232448.0,130.0,2,Essence,Manuelle,Passable,3.0,5.4,5307
+Nissan,2023,100158.0,267.0,2,Hybride,Manuelle,Neuf,3.0,8.3,45472
+Mercedes,2021,184245.0,364.0,4,Essence,Automatique,Neuf,1.0,13.0,61368
+Ford,2008,,388.0,2,Essence,Automatique,,3.0,12.5,41789
+Volkswagen,2016,170354.0,371.0,4,Électrique,Automatique,Passable,2.0,8.0,42396
+Peugeot,2013,119719.0,80.0,5,Diesel,Manuelle,Neuf,4.0,11.6,24036
+Renault,2023,194446.0,131.0,3,Diesel,Automatique,Bon,4.0,12.2,19420
+Volkswagen,2016,68244.0,295.0,2,Hybride,Manuelle,Mauvais,,,36319
+Volkswagen,2013,,222.0,3,Hybride,Manuelle,Bon,2.0,,29317
+Mercedes,2011.0,56264.0,268.0,3,Électrique,Manuelle,Neuf,3.0,6.0,57167
+Audi,2018,,121.0,5,Électrique,Manuelle,Bon,3.0,,26334
+Peugeot,2023.0,228488.0,329.0,3,Électrique,Manuelle,Neuf,1.0,7.0,45902
+BMW,2019,57545.0,128.0,4,Essence,Manuelle,Passable,3.0,,32244
+Volkswagen,2020,249267.0,141.0,3,Électrique,Automatique,Bon,1.0,4.3,25697
+Audi,2009,39224.0,217.0,3,Électrique,Manuelle,Passable,2.0,10.4,39627
+BMW,2007,233588.0,132.0,3,Hybride,Automatique,Passable,4.0,7.6,25050
+Peugeot,2016,97945.0,379.0,2,Électrique,Automatique,Très bon,4.0,,500
+Toyota,2008,13224.0,312.0,2,Essence,Manuelle,Neuf,4.0,12.8,43842
+Nissan,2020,40738.0,399.0,4,Essence,Manuelle,Mauvais,3.0,8.6,33717
+Audi,2011,,176.0,4,Hybride,Manuelle,Neuf,1.0,5.0,38363
+Honda,2017,63731.0,295.0,2,Électrique,Automatique,,1.0,12.3,200000
+Toyota,2014,180760.0,382.0,4,Électrique,Manuelle,Neuf,2.0,,52640
+Nissan,2011,231001.0,287.0,2,Essence,Automatique,Passable,3.0,11.3,26410
+Mercedes,2018,239690.0,310.0,5,Électrique,Manuelle,Bon,2.0,,48043
+Ford,2009,204581.0,328.0,3,Électrique,Manuelle,Bon,,7.5,35258
+Renault,2007,139649.0,331.0,3,Électrique,Automatique,Très bon,1.0,,35246
+Honda,2015,8070.0,74.0,4,Diesel,Automatique,Mauvais,4.0,9.2,14873
+Mercedes,2015,126161.0,330.0,2,Hybride,Manuelle,Mauvais,3.0,8.6,47538
+Peugeot,2022,8666.0,123.0,2,Diesel,Automatique,Mauvais,,4.5,19300
+Mercedes,2019,57761.0,116.0,4,Hybride,Automatique,Passable,4.0,6.9,39595
+Ford,2016,36368.0,284.0,2,Essence,Automatique,,,13.3,26225
+Peugeot,2013,,246.0,5,Électrique,,Bon,2.0,7.9,30094
+Honda,2014,,78.0,3,Hybride,,Passable,,9.5,5261
+Ford,2016,41914.0,168.0,4,Diesel,,Neuf,3.0,9.3,35678
+BMW,2021.0,201579.0,89.0,4,Électrique,Manuelle,Mauvais,1.0,9.9,26073
+Renault,2010,127738.0,310.0,2,Essence,Automatique,Mauvais,1.0,4.6,18486
+Honda,2011,210098.0,130.0,4,Hybride,,Neuf,3.0,7.6,24923
+BMW,2018,246965.0,247.0,5,Hybride,Manuelle,Mauvais,1.0,11.2,31770
+Nissan,2017,242327.0,131.0,2,Hybride,Automatique,Neuf,1.0,6.0,26078
+Honda,2012,241688.0,214.0,2,Électrique,Manuelle,Passable,1.0,,21868
+Nissan,2014,67526.0,,2,Diesel,Automatique,Bon,4.0,4.1,34317
+Peugeot,2013,201907.0,72.0,2,Diesel,Automatique,Neuf,,8.4,17636
+BMW,2022,176837.0,229.0,5,Hybride,Manuelle,Très bon,3.0,12.8,42934
+Renault,2006,19956.0,296.0,2,Essence,Automatique,Neuf,1.0,4.5,33679
+Ford,2009,218967.0,338.0,4,Essence,Automatique,Mauvais,4.0,5.9,19167
+Volkswagen,2009,46240.0,,5,Diesel,Automatique,Passable,,7.1,23784
+Mercedes,2010,121008.0,158.0,3,Essence,Automatique,Passable,1.0,11.3,27415
+Toyota,2023,168220.0,398.0,3,Diesel,Automatique,Neuf,2.0,10.4,54590
+Renault,2012,94270.0,137.0,4,Hybride,Manuelle,Bon,1.0,8.2,14232
+BMW,2020,4757.0,167.0,4,Diesel,Manuelle,Très bon,1.0,11.6,38744
+Volkswagen,2017,19097.0,336.0,5,Diesel,Automatique,Passable,4.0,10.1,180000
+Renault,2005,141467.0,174.0,3,Hybride,Automatique,Mauvais,3.0,13.0,7953
+BMW,2021,147313.0,392.0,3,Essence,Manuelle,Mauvais,3.0,12.2,46620
+Audi,2011.0,103892.0,192.0,3,Diesel,Automatique,Bon,4.0,6.5,35213
+Audi,2017,158768.0,98.0,3,Diesel,Manuelle,Passable,1.0,6.7,22690
+Nissan,2008,,206.0,3,Hybride,Automatique,Neuf,2.0,5.3,24895
+Renault,2008,70480.0,264.0,2,Essence,Automatique,Mauvais,1.0,7.4,19464
+Audi,2010,46163.0,295.0,4,Diesel,Automatique,Bon,1.0,14.0,200000
+BMW,2023,,239.0,2,Hybride,Automatique,,2.0,8.1,500
+Nissan,2016,180912.0,78.0,3,Diesel,Automatique,Passable,4.0,6.2,6307
+BMW,2011.0,,109.0,5,Électrique,Automatique,Passable,,11.6,29426
+Nissan,2014,52853.0,94.0,5,Hybride,Automatique,Passable,4.0,9.4,22959
+Renault,2023,155989.0,330.0,3,Essence,,Passable,4.0,5.5,22109
+Volkswagen,2011,96731.0,,3,Essence,,Mauvais,1.0,7.8,21157
+Ford,2007,,193.0,5,Essence,Manuelle,Bon,3.0,8.1,300
+Honda,2017,206524.0,107.0,2,Essence,Automatique,Passable,3.0,11.5,10743
+Volkswagen,2017,62823.0,397.0,2,Diesel,Automatique,Très bon,4.0,4.2,51852
+Peugeot,2022,151878.0,320.0,3,Diesel,Automatique,Très bon,,6.7,37339
+BMW,2012,206592.0,245.0,2,Essence,Automatique,Bon,4.0,9.2,34299
+Peugeot,2013,1759.0,159.0,5,Essence,Automatique,Neuf,2.0,,29167
+Volkswagen,2011,,106.0,2,Essence,,Neuf,3.0,10.3,20746
+Nissan,2005,92374.0,,3,Diesel,Automatique,Neuf,4.0,8.8,47281
+Honda,2007,,245.0,5,Essence,Manuelle,Très bon,1.0,,26364
+Honda,2017,24442.0,353.0,2,Essence,Automatique,Neuf,4.0,13.5,50719
+Toyota,2021,164791.0,150.0,4,Électrique,Manuelle,Mauvais,3.0,10.3,23380
+Honda,2005,189138.0,,5,Électrique,Manuelle,Passable,1.0,5.3,18115
+Ford,2010,93501.0,109.0,5,Essence,Automatique,Très bon,1.0,9.6,21805
+Honda,2010,2079.0,370.0,4,Hybride,Automatique,Bon,2.0,11.8,45581
+Volkswagen,2016,133789.0,293.0,4,Essence,Manuelle,Bon,1.0,11.1,32023
+Toyota,2017,,387.0,5,Électrique,Manuelle,Passable,,5.7,51907
+Volkswagen,2017,159024.0,,4,Hybride,Automatique,Très bon,4.0,,27896
+Volkswagen,2019,217516.0,255.0,3,Hybride,Automatique,Neuf,3.0,8.5,47908
+Mercedes,2020,173532.0,392.0,3,Essence,Manuelle,Neuf,2.0,5.6,59881
+Toyota,2015,90397.0,125.0,3,Électrique,Automatique,Mauvais,,5.8,17080
+Volkswagen,2009,72847.0,109.0,5,Électrique,Automatique,Mauvais,1.0,,24023
+Mercedes,2008,93607.0,109.0,4,Hybride,,,1.0,12.0,38586
+Mercedes,2007,220178.0,306.0,4,Essence,Manuelle,Bon,2.0,5.2,37902
+Toyota,2023,149521.0,358.0,2,Diesel,,Bon,3.0,5.3,44312
+Peugeot,2022,164608.0,331.0,2,Diesel,Manuelle,Mauvais,2.0,12.5,31448
+Nissan,2019.0,64077.0,285.0,4,Électrique,Automatique,Passable,4.0,7.4,40136
+Ford,2013,38258.0,216.0,4,Diesel,Automatique,Neuf,2.0,4.3,34307
+Nissan,2021,179374.0,237.0,4,Électrique,Manuelle,Mauvais,,4.5,28442
+Honda,2018,159937.0,161.0,5,Électrique,Manuelle,Mauvais,4.0,5.4,20224
+Ford,2019,137717.0,128.0,4,Électrique,Manuelle,Neuf,1.0,6.1,34978
+Honda,2005,119771.0,128.0,2,Diesel,,Neuf,3.0,10.7,27833
+Volkswagen,2007,38000.0,373.0,5,Électrique,,Bon,1.0,5.6,49087
+BMW,2020,26737.0,238.0,4,Hybride,Manuelle,Passable,1.0,,45590
+Toyota,2015,11485.0,338.0,2,Essence,Automatique,Passable,2.0,11.6,39296
+Ford,2016,,114.0,5,Essence,Automatique,Neuf,1.0,10.7,30007
+Ford,2014,156594.0,250.0,4,Électrique,Automatique,Très bon,4.0,8.4,32502
+Volkswagen,2020,119614.0,,4,Essence,Manuelle,Mauvais,4.0,9.5,180000
+Peugeot,2012,65155.0,260.0,4,Diesel,Automatique,Mauvais,3.0,,28881
+Mercedes,2010,186240.0,224.0,5,Diesel,Automatique,,4.0,8.8,47108
+Volkswagen,2016,52487.0,,2,Essence,Manuelle,,2.0,9.1,34950
+Audi,2012,129948.0,,2,Diesel,,,3.0,7.9,20072
+Mercedes,2008,,202.0,3,Essence,Manuelle,Neuf,,13.1,43756
+Toyota,2012,40806.0,304.0,4,Essence,Manuelle,Neuf,2.0,,45286
+Mercedes,2022,48770.0,114.0,3,Essence,Automatique,,4.0,11.8,33992
+Peugeot,2009,78623.0,383.0,3,Électrique,Automatique,Neuf,4.0,5.2,51741
+Mercedes,2013,103177.0,318.0,2,Essence,Automatique,Neuf,1.0,12.0,54284
+Toyota,2008,230857.0,100.0,5,Électrique,Automatique,Neuf,4.0,10.2,23433
+Peugeot,2021,131026.0,92.0,5,Essence,Automatique,Mauvais,4.0,12.4,8607
+Nissan,2013,75629.0,229.0,2,Essence,Automatique,Bon,2.0,5.0,23834
+Ford,2005,120993.0,227.0,5,Essence,Manuelle,Bon,2.0,9.6,14012
+Ford,2017,,108.0,3,Diesel,Manuelle,Neuf,1.0,9.0,28703
+Honda,2020,126944.0,,4,Électrique,Automatique,Mauvais,,11.1,19984
+Nissan,2017,243798.0,327.0,2,Électrique,Manuelle,Bon,,9.3,36433
+Nissan,2018,213046.0,275.0,4,Essence,Automatique,Bon,4.0,9.4,28947
+Mercedes,2007,,146.0,5,Essence,Manuelle,Bon,3.0,,33245
+Ford,2010,26399.0,81.0,4,Diesel,Manuelle,Mauvais,3.0,7.1,10195
+Toyota,2022,128177.0,364.0,5,Diesel,Manuelle,Mauvais,1.0,,32411
+Renault,2023,216454.0,293.0,5,Diesel,Automatique,Neuf,1.0,5.2,36377
+Renault,2009,212316.0,82.0,3,Électrique,,Passable,1.0,13.6,6531
+Peugeot,2019,109575.0,115.0,5,Électrique,Automatique,Bon,2.0,11.1,24202
+Ford,2006,246592.0,224.0,3,Électrique,Manuelle,Passable,2.0,13.5,23752
+Ford,2014,110904.0,182.0,3,Essence,Manuelle,Mauvais,2.0,6.3,6511
+Renault,2022,207606.0,302.0,3,Électrique,Manuelle,Mauvais,1.0,12.8,27621
+Ford,2017.0,186178.0,86.0,2,Hybride,Manuelle,Mauvais,4.0,12.1,8480
+Mercedes,2009,243671.0,292.0,2,Hybride,Manuelle,Passable,3.0,10.8,34342
+Audi,2005,30678.0,257.0,5,Diesel,Automatique,Mauvais,1.0,10.3,31589
+BMW,2005,76218.0,,3,Électrique,Automatique,Neuf,2.0,7.2,44766
+Nissan,2022,63230.0,,2,Hybride,Manuelle,Mauvais,2.0,12.2,38671
+Honda,2019,245756.0,143.0,3,Diesel,Manuelle,Très bon,1.0,9.0,23662
+Peugeot,2021,74055.0,302.0,4,Électrique,Manuelle,Passable,1.0,4.7,43199
+Audi,2015,187445.0,293.0,4,Essence,Manuelle,Très bon,2.0,7.1,39213
+Renault,2021,162552.0,388.0,4,Hybride,Automatique,Mauvais,4.0,13.4,30385
+Nissan,2017,,129.0,5,Essence,Manuelle,Neuf,2.0,12.5,20551
+Ford,2005,199908.0,291.0,3,Électrique,Automatique,Bon,2.0,,32807
+Honda,2006,72258.0,106.0,4,Hybride,,Mauvais,,10.3,180000
+Ford,2013,39986.0,347.0,2,Électrique,Automatique,Neuf,,6.5,52357
+Toyota,2007,,265.0,4,Essence,Manuelle,Passable,2.0,5.6,22429
+Toyota,2005,85595.0,311.0,4,Hybride,Manuelle,Très bon,2.0,5.9,37843
+Honda,2020,101358.0,393.0,4,Essence,Automatique,,3.0,4.2,50022
+Honda,2010,210183.0,288.0,5,Électrique,Manuelle,Très bon,1.0,7.9,33385
+Renault,2021,64929.0,261.0,2,Électrique,Manuelle,Passable,3.0,5.9,32190
+Honda,2009,73506.0,86.0,3,Essence,Manuelle,Neuf,3.0,,17289
+Mercedes,2009,34911.0,81.0,2,Hybride,Automatique,Passable,2.0,13.3,27963
+Ford,2010,87127.0,262.0,3,Essence,Manuelle,Très bon,1.0,8.3,500
+Audi,2007,162893.0,91.0,5,Électrique,Manuelle,Mauvais,4.0,12.8,18918
+Volkswagen,2009,206111.0,189.0,5,Essence,Automatique,Bon,2.0,10.1,18438
+Honda,2009,191607.0,279.0,5,Électrique,Automatique,Passable,4.0,6.5,25918
+Peugeot,2014,,375.0,5,Essence,Automatique,Passable,4.0,7.6,33229
+Toyota,2014,84458.0,339.0,3,Hybride,Manuelle,Neuf,1.0,4.8,54292
+Mercedes,2023,12175.0,261.0,4,Hybride,Manuelle,Neuf,3.0,,63966
+Nissan,2021,119235.0,244.0,3,Essence,Manuelle,Passable,1.0,10.8,19120
+Volkswagen,2018,54771.0,354.0,2,Essence,Automatique,,4.0,4.7,51090
+Audi,2013,237732.0,273.0,5,Hybride,Manuelle,Bon,,6.1,39071
+Volkswagen,2018,127157.0,,5,Électrique,Manuelle,Neuf,4.0,7.8,51422
+Honda,2005,,320.0,2,Hybride,Automatique,Très bon,2.0,13.8,39520
+Renault,2023,86925.0,296.0,3,Électrique,Automatique,Mauvais,2.0,,37574
+Toyota,2017,244446.0,76.0,4,Essence,Automatique,Neuf,1.0,11.3,19417
+Toyota,2017,66358.0,98.0,4,Essence,Automatique,Très bon,,5.2,21898
+Nissan,2008,148399.0,102.0,2,Électrique,,Très bon,3.0,11.8,22844
+Renault,2005,,203.0,4,Essence,Manuelle,Bon,4.0,11.9,15731
+Ford,2021,,148.0,3,Électrique,Automatique,,4.0,10.0,35395
+BMW,2012,4425.0,127.0,3,Diesel,Manuelle,,3.0,13.9,18102
+Mercedes,2006,16032.0,95.0,2,Hybride,,Très bon,1.0,7.3,36087
+Toyota,2012,2198.0,295.0,3,Diesel,,Très bon,4.0,13.4,44546
+Peugeot,2011,191572.0,354.0,5,Électrique,Automatique,Bon,4.0,13.1,36440
+Toyota,2006,184466.0,73.0,2,Hybride,,Neuf,2.0,4.1,25643
+Volkswagen,2007,151151.0,168.0,3,Électrique,Manuelle,Neuf,4.0,8.5,33102
+Toyota,2022,167292.0,108.0,2,Hybride,Automatique,Passable,3.0,,23956
+Toyota,2016,172946.0,340.0,4,Hybride,Automatique,Bon,2.0,5.0,36647
+BMW,2005.0,144931.0,354.0,3,Hybride,Automatique,Passable,,9.5,200000
+BMW,2016,181532.0,226.0,5,Hybride,Automatique,Bon,2.0,13.8,39516
+Audi,2009,162491.0,144.0,3,Électrique,Automatique,Mauvais,3.0,9.6,22861
+Ford,2021,118865.0,357.0,2,Hybride,Manuelle,Très bon,3.0,5.9,38583
+Peugeot,2020,139777.0,,2,Hybride,,Mauvais,,9.8,19565
+Toyota,2019,173952.0,244.0,3,Diesel,Manuelle,Bon,1.0,,30702
+Toyota,2019,23236.0,153.0,5,Essence,Automatique,,2.0,9.2,32296
+Mercedes,2009,87955.0,91.0,5,Essence,,Neuf,,4.7,38944
+BMW,2018,216586.0,96.0,5,Diesel,,Neuf,2.0,10.1,300
+Peugeot,2006,103145.0,264.0,2,Diesel,Manuelle,Passable,3.0,9.2,24733
+Nissan,2015,146430.0,305.0,3,Électrique,Automatique,Bon,4.0,11.4,36856
+Audi,2023,230785.0,,4,Électrique,Automatique,Bon,4.0,10.3,35234
+Ford,2011,94914.0,90.0,2,Électrique,Automatique,Neuf,,9.5,31120
+Renault,2010,102870.0,372.0,5,Diesel,Manuelle,Mauvais,1.0,10.9,28204
+Ford,2006,207990.0,153.0,3,Diesel,Automatique,Très bon,1.0,5.4,20805
+Volkswagen,2010,,331.0,5,Hybride,Manuelle,Mauvais,3.0,10.0,39268
+Toyota,2022,14596.0,216.0,4,Électrique,Automatique,,2.0,5.7,41497
+Audi,2006,164644.0,326.0,5,Électrique,Manuelle,Neuf,3.0,13.3,55976
+Volkswagen,2022,209829.0,127.0,5,Électrique,Manuelle,Neuf,4.0,4.7,37350
+Peugeot,2019,132351.0,84.0,4,Essence,Manuelle,Neuf,,8.3,24973
+Renault,2023,194269.0,231.0,3,Hybride,Automatique,Passable,2.0,11.0,30193
+BMW,2006,111496.0,232.0,2,Électrique,,Mauvais,4.0,8.6,32658
+Audi,2010,,389.0,3,Électrique,Manuelle,Bon,4.0,4.9,50311
+Audi,2005,193588.0,,4,Électrique,,Très bon,4.0,9.5,44454
+Toyota,2019,138155.0,349.0,5,Essence,Automatique,Passable,3.0,10.4,32264
+Honda,2014,120674.0,81.0,3,Essence,Automatique,Bon,1.0,11.0,9507
+Audi,2023,120307.0,343.0,2,Diesel,Manuelle,Mauvais,,7.7,42877
+Mercedes,2021,240469.0,340.0,4,Hybride,Automatique,Neuf,1.0,9.6,56081
+Renault,2009,148843.0,277.0,3,Diesel,Automatique,Mauvais,3.0,8.5,14355
+Renault,2008,161047.0,96.0,2,Hybride,Automatique,Très bon,4.0,10.7,16341
+Mercedes,2014.0,176720.0,141.0,4,Essence,Automatique,Passable,3.0,9.8,26756
+Nissan,2021,179357.0,129.0,2,Électrique,Manuelle,Passable,3.0,9.3,24434
+Mercedes,2014.0,19063.0,214.0,4,Diesel,Automatique,Très bon,1.0,6.5,50452
+Mercedes,2021,67642.0,162.0,5,Électrique,Automatique,,4.0,4.0,49347
+Renault,2009,90093.0,378.0,3,Diesel,Manuelle,Bon,3.0,5.7,38692
+Ford,2006,245462.0,77.0,2,Essence,Manuelle,Passable,4.0,5.2,2000
+Renault,2010,217215.0,148.0,4,Essence,Automatique,,1.0,8.5,10986
+Honda,2006,,96.0,2,Essence,Automatique,Neuf,,10.1,18012
+Toyota,2017,182992.0,,2,Diesel,Automatique,Bon,1.0,6.1,29126
+Volkswagen,2015,159601.0,119.0,3,Hybride,,Très bon,4.0,13.4,30020
+Ford,2015,35954.0,268.0,5,Diesel,Manuelle,Bon,4.0,4.1,30885
+BMW,2020,27856.0,250.0,2,Hybride,Manuelle,Neuf,1.0,11.7,62956
+Volkswagen,2015,2573.0,93.0,4,Diesel,Manuelle,Passable,2.0,10.3,19990
+Toyota,2023,,385.0,4,Diesel,Automatique,Passable,3.0,7.7,35269
+Honda,2019.0,35367.0,115.0,5,Essence,Automatique,Neuf,4.0,4.5,32245
+Honda,2020,,84.0,4,Électrique,Automatique,Très bon,4.0,,22251
+BMW,2015,237804.0,222.0,5,Électrique,Automatique,Passable,3.0,7.9,41825
+Ford,2020,,,4,Hybride,Manuelle,Mauvais,1.0,13.4,29996
+Nissan,2012,60774.0,,3,Électrique,Manuelle,Passable,1.0,9.4,36012
+Mercedes,2008,23752.0,342.0,2,Diesel,,Mauvais,1.0,,39133
+Ford,2012,55029.0,,3,Diesel,,Neuf,2.0,,44637
+Nissan,2008,148757.0,297.0,2,Essence,Automatique,Neuf,2.0,11.3,31977
+Honda,2007,,78.0,2,Essence,Automatique,Passable,4.0,10.2,8608
+Renault,2007,51693.0,235.0,2,Électrique,Manuelle,Bon,1.0,11.4,27947
+Toyota,2022,116739.0,388.0,3,Hybride,,Mauvais,3.0,6.1,35229
+BMW,2023,55961.0,283.0,2,Électrique,Automatique,,4.0,10.6,58295
+Toyota,2023,238009.0,186.0,3,Électrique,Manuelle,Passable,3.0,9.0,28118
+Peugeot,2009,207980.0,141.0,5,Électrique,Automatique,Très bon,,11.4,23104
+Peugeot,2022,,133.0,4,Électrique,,Passable,2.0,7.3,28240
+Ford,2014,74532.0,274.0,4,Diesel,Manuelle,Bon,4.0,12.9,37675
+Honda,2010,81994.0,278.0,2,Hybride,Automatique,Bon,2.0,,36552
+Honda,2005,56133.0,141.0,3,Diesel,Manuelle,Bon,4.0,,19370
+Mercedes,2009,228497.0,346.0,4,Hybride,Automatique,Bon,1.0,12.6,41758
+Mercedes,2013,61268.0,343.0,3,Essence,,Neuf,3.0,12.2,58095
+Mercedes,2016,223273.0,389.0,3,Électrique,Manuelle,Neuf,1.0,9.1,64833
+Renault,2018,,164.0,2,Diesel,Manuelle,Mauvais,4.0,8.4,10751
+Volkswagen,2006,188456.0,235.0,4,Hybride,Automatique,Très bon,,14.0,31160
+Audi,2021,31653.0,101.0,2,Essence,,Passable,4.0,6.3,30679
+Volkswagen,2018.0,157729.0,80.0,2,Essence,Manuelle,Passable,2.0,9.5,10635
+Toyota,2017,171024.0,370.0,4,Électrique,Manuelle,Neuf,3.0,10.7,50757
+Volkswagen,2013,153252.0,286.0,4,Hybride,Manuelle,Passable,3.0,11.0,300
+Renault,2019,228504.0,358.0,5,Diesel,Manuelle,Neuf,4.0,6.0,200000
+Toyota,2019,121829.0,171.0,5,Électrique,,Mauvais,4.0,10.5,20383
+Volkswagen,2015,128377.0,336.0,3,Diesel,Automatique,Très bon,2.0,12.2,38255
+Renault,2020,209483.0,283.0,4,Essence,Automatique,Mauvais,1.0,4.5,14563
+Audi,2021,1622.0,248.0,5,Diesel,Automatique,,1.0,13.1,48900
+Volkswagen,2008,48756.0,157.0,3,Diesel,Automatique,Bon,3.0,4.3,28718
+Renault,2005,,110.0,3,Électrique,Automatique,Bon,2.0,7.6,15381
+Mercedes,2012,16725.0,145.0,3,Diesel,Automatique,Mauvais,4.0,4.2,31569
+Honda,2021,192468.0,115.0,5,Électrique,Manuelle,Passable,3.0,,24621
+Mercedes,2007,51226.0,229.0,4,Essence,Automatique,Très bon,2.0,13.1,36294
+Honda,2019,237368.0,149.0,2,Électrique,Manuelle,Bon,1.0,7.5,25408
+BMW,2019,81182.0,379.0,3,Électrique,Manuelle,Bon,2.0,8.2,67173
+BMW,2018,213637.0,155.0,5,Hybride,Automatique,Bon,1.0,,34885
+BMW,2018,29402.0,161.0,5,Diesel,Manuelle,Très bon,2.0,10.0,39968
+Audi,2006,4263.0,217.0,2,Essence,Manuelle,Bon,3.0,9.9,31508
+Mercedes,2017,227595.0,230.0,2,Électrique,Manuelle,Très bon,1.0,7.7,40728
+Honda,2018,177900.0,271.0,5,Essence,Manuelle,Bon,3.0,7.3,29975
+Renault,2023,,311.0,4,Hybride,Automatique,Mauvais,3.0,12.8,39306
+Toyota,2011,74182.0,71.0,2,Diesel,Automatique,,1.0,7.8,180000
+Renault,2007,224137.0,294.0,5,Électrique,Automatique,Très bon,1.0,8.9,24247
+Toyota,2019,190124.0,358.0,2,Diesel,Automatique,,,6.8,29542
+Peugeot,2018,142736.0,302.0,4,Hybride,Automatique,Très bon,4.0,11.9,40095
+Renault,2015,,146.0,3,Hybride,Automatique,Mauvais,4.0,8.0,15465
+Volkswagen,2019,101332.0,185.0,2,Essence,Automatique,Mauvais,3.0,9.1,17785
+Volkswagen,2017,89563.0,223.0,4,Électrique,Automatique,Très bon,3.0,6.5,40814
+Ford,2022,160445.0,172.0,5,Essence,,Passable,,13.9,20031
+Mercedes,2010,248441.0,263.0,2,Hybride,Automatique,Mauvais,3.0,6.9,27937
+Toyota,2007,167469.0,235.0,2,Diesel,Manuelle,Bon,3.0,11.7,22949
+Toyota,2023,128575.0,,5,Essence,Automatique,Passable,1.0,8.3,20585
+Mercedes,2019,217217.0,243.0,3,Essence,Manuelle,Très bon,1.0,6.1,39328
+Audi,2009,101371.0,191.0,5,Diesel,Manuelle,Passable,3.0,,24674
+Ford,2014,,212.0,2,Essence,Manuelle,Neuf,4.0,7.3,37235
+Audi,2011,247146.0,175.0,5,Diesel,,Neuf,2.0,12.7,30680
+Audi,2021,192192.0,374.0,4,Électrique,Automatique,Mauvais,4.0,13.2,40747
+Audi,2011,,,5,Diesel,,,2.0,12.6,39160
+Mercedes,2016,21172.0,192.0,2,Électrique,Automatique,Bon,4.0,4.4,50688
+Audi,2021,11555.0,78.0,5,Diesel,Automatique,Passable,1.0,11.9,25889
+Volkswagen,2017,218482.0,331.0,3,Hybride,Manuelle,Neuf,3.0,8.1,44561
+BMW,2008,209689.0,142.0,5,Hybride,Automatique,Mauvais,3.0,12.7,180000
+Peugeot,2014,,292.0,3,Électrique,Manuelle,Passable,1.0,10.4,34188
+Toyota,2007,57492.0,110.0,4,Électrique,Manuelle,Mauvais,2.0,12.3,20320
+Toyota,2013,,273.0,3,Hybride,Automatique,Mauvais,2.0,9.0,24634
+Peugeot,2017,89599.0,333.0,5,Électrique,,,2.0,9.4,200000
+Mercedes,2022,,397.0,2,Diesel,Manuelle,Neuf,1.0,5.4,59716
+Renault,2019,222320.0,247.0,3,Diesel,Automatique,Mauvais,2.0,11.8,15216
+Mercedes,2008,155834.0,,4,Hybride,Automatique,Très bon,1.0,8.2,57588
+Toyota,2019,11046.0,153.0,3,Essence,Automatique,Mauvais,4.0,9.0,17881
+Toyota,2006,228071.0,387.0,3,Diesel,Manuelle,Mauvais,4.0,11.9,28873
+Peugeot,2019,116021.0,180.0,3,Électrique,Manuelle,Bon,1.0,10.0,27374
+Audi,2012,159841.0,,4,Essence,Automatique,Bon,3.0,6.0,37241
+Mercedes,2012,184374.0,76.0,5,Essence,Automatique,Bon,4.0,9.9,27715
+Honda,2021,154222.0,153.0,3,Diesel,,,2.0,8.1,25263
+Peugeot,2016,199319.0,277.0,3,Diesel,Automatique,Très bon,1.0,8.7,29623
+Volkswagen,2023,,383.0,2,Essence,Automatique,Mauvais,,4.3,43795
+Toyota,2014,225685.0,91.0,4,Essence,Manuelle,Bon,,6.1,11932
+Peugeot,2013,120900.0,72.0,3,Hybride,Automatique,Très bon,3.0,6.8,18189
+Mercedes,2009,220471.0,196.0,4,Électrique,,Neuf,2.0,11.1,45191
+Toyota,2010,152864.0,366.0,3,Hybride,Automatique,Mauvais,3.0,4.1,28258
+Renault,2006,59129.0,257.0,5,Diesel,Manuelle,Passable,4.0,8.1,22239
+Peugeot,2017,237091.0,83.0,5,Hybride,Automatique,Mauvais,1.0,13.2,3458
+Ford,2010,205550.0,81.0,3,Hybride,Manuelle,Passable,2.0,5.1,11585
+Toyota,2009,,156.0,5,Hybride,Automatique,Bon,1.0,9.2,22300
+Mercedes,2005,114130.0,81.0,3,Hybride,Manuelle,Passable,2.0,11.9,18998
+BMW,2010,198370.0,94.0,5,Électrique,Manuelle,Bon,1.0,13.4,31706
+Honda,2010,163059.0,370.0,2,Électrique,Manuelle,Neuf,2.0,11.5,47844
+Nissan,2020,146922.0,312.0,2,Essence,Manuelle,,2.0,11.2,30190
+Audi,2008,143184.0,191.0,2,Diesel,Manuelle,Mauvais,2.0,,18815
+Nissan,2015,121789.0,216.0,4,Hybride,Manuelle,Bon,2.0,8.5,29973
+Mercedes,2013,155130.0,124.0,4,Essence,,Mauvais,2.0,12.1,21415
+Volkswagen,2007,176492.0,307.0,2,Essence,Manuelle,Très bon,,4.1,34231
+Volkswagen,2023,38890.0,242.0,4,Essence,Automatique,Bon,2.0,13.2,34080
+BMW,2012,66017.0,290.0,5,Électrique,Automatique,Passable,2.0,8.4,51541
+Audi,2009,178376.0,188.0,3,Hybride,Automatique,Bon,,9.5,32399
+Ford,2008,163993.0,378.0,3,Hybride,Automatique,,1.0,,29953
+BMW,2010,236993.0,252.0,3,Diesel,Automatique,Neuf,3.0,11.4,40137
+Nissan,2006,132596.0,357.0,2,Hybride,Manuelle,Bon,2.0,4.8,34836
+BMW,2015,100424.0,376.0,4,Hybride,Manuelle,Passable,3.0,12.7,49839
+Nissan,2008,15048.0,369.0,5,Essence,Manuelle,Très bon,2.0,12.3,40923
+Toyota,2019,166183.0,151.0,5,Diesel,Automatique,Neuf,2.0,6.2,30305
+Volkswagen,2010,168976.0,280.0,2,Hybride,Manuelle,Très bon,1.0,12.1,33719
+Toyota,2021,54912.0,219.0,5,Électrique,Manuelle,,4.0,,40346
+Honda,2010,34008.0,,5,Hybride,Manuelle,Mauvais,4.0,10.3,12610
+Audi,2023,131132.0,381.0,5,Essence,Manuelle,Mauvais,1.0,,43702
+Ford,2006,205738.0,128.0,5,Électrique,Manuelle,Passable,,6.7,13341
+Nissan,2019,,,4,Essence,Automatique,Mauvais,4.0,6.3,21747
+Ford,2015,55337.0,271.0,5,Hybride,Manuelle,Neuf,1.0,7.2,200000
+Nissan,2012,110616.0,312.0,3,Électrique,Automatique,,1.0,13.0,35001
+Mercedes,2023,13350.0,104.0,2,Diesel,Automatique,Passable,4.0,4.8,37240
+BMW,2017,24354.0,162.0,4,Diesel,Automatique,Bon,3.0,12.3,38790
+Honda,2016,45186.0,276.0,5,Électrique,Automatique,Bon,1.0,,40304
+Volkswagen,2009,28145.0,374.0,4,Électrique,Automatique,,2.0,9.2,43327
+Nissan,2010,165092.0,282.0,5,Essence,Manuelle,Très bon,3.0,,30827
+Ford,2008,86123.0,228.0,3,Électrique,Manuelle,Bon,3.0,12.8,26093
+Honda,2023,237739.0,93.0,2,Essence,Manuelle,Mauvais,,7.4,8565
+Renault,2005,206258.0,362.0,5,Hybride,Automatique,Passable,4.0,8.6,30314
+Renault,2021,216541.0,,5,Essence,Manuelle,Mauvais,,8.1,2000
+Toyota,2016,20581.0,289.0,5,Électrique,Manuelle,Bon,1.0,4.1,42573
+Volkswagen,2019,,89.0,5,Électrique,Automatique,Passable,,7.0,23803
+Mercedes,2005,23051.0,221.0,2,Hybride,Automatique,Mauvais,4.0,8.6,30743
+Ford,2018,51474.0,119.0,2,Électrique,Automatique,Neuf,3.0,8.1,36838
+BMW,2010.0,91748.0,246.0,3,Électrique,Automatique,Passable,4.0,11.2,41099
+BMW,2009.0,125995.0,165.0,2,Diesel,Manuelle,Neuf,,7.8,38251
+Ford,2015,245690.0,,5,Diesel,Automatique,Très bon,4.0,8.9,21840
+Audi,2008,,319.0,3,Hybride,Automatique,Passable,4.0,8.3,39340
+Mercedes,2017,6960.0,186.0,3,Essence,Manuelle,Neuf,3.0,11.4,49921
+Honda,2015,166844.0,297.0,3,Diesel,Manuelle,Bon,,12.6,32915
+Nissan,2007,,135.0,5,Essence,Automatique,Bon,2.0,,11231
+Audi,2005,180553.0,331.0,4,Électrique,Manuelle,Très bon,1.0,11.9,47018
+Nissan,2010.0,36408.0,364.0,5,Diesel,Automatique,,,7.0,36405
+Nissan,2022,94006.0,312.0,2,Hybride,Automatique,,3.0,,36806
+Audi,2014,57134.0,,2,Hybride,,Passable,1.0,7.5,40963
+Toyota,2009,151563.0,315.0,5,Hybride,Manuelle,Très bon,1.0,8.1,36765
+Renault,2014,132413.0,194.0,5,Diesel,Automatique,Passable,2.0,11.3,19314
+Nissan,2016,175695.0,337.0,3,Essence,Automatique,Bon,3.0,12.8,31714
+Audi,2006.0,90327.0,200.0,5,Électrique,Automatique,Neuf,3.0,5.2,40517
+Audi,2017,131410.0,306.0,3,Essence,Manuelle,Bon,3.0,10.3,300
+Peugeot,2012,202503.0,87.0,2,Essence,Automatique,Bon,2.0,9.8,7548
+Toyota,2006,143326.0,109.0,3,Électrique,Automatique,Neuf,2.0,5.2,24743
+Volkswagen,2005.0,182932.0,90.0,5,Électrique,Automatique,Bon,2.0,6.1,19634
+Peugeot,2009,11344.0,294.0,2,Diesel,Automatique,Très bon,2.0,7.1,36660
+Peugeot,2013,,351.0,4,Diesel,,Neuf,2.0,5.7,38657
+Ford,2021,185828.0,77.0,3,Diesel,Manuelle,Bon,4.0,6.4,13248
+Renault,2013,67957.0,169.0,2,Diesel,Automatique,,4.0,6.7,12875
+Audi,2015,105423.0,309.0,3,Diesel,Automatique,Bon,3.0,7.4,40726
+Renault,2019,58053.0,156.0,2,Électrique,Automatique,Très bon,1.0,,33579
+Mercedes,2010,201927.0,367.0,2,Essence,Automatique,Passable,3.0,9.7,41729
+Ford,2007,146968.0,83.0,3,Diesel,,Bon,,13.9,6980
+Volkswagen,2021,,71.0,4,Diesel,Manuelle,Passable,2.0,8.1,12239
+Renault,2009,193624.0,362.0,2,Essence,Manuelle,Mauvais,1.0,11.5,23278
+BMW,2016,77454.0,394.0,2,Diesel,Automatique,Bon,3.0,12.7,200000
+Nissan,2022,249753.0,110.0,2,Essence,Automatique,Neuf,3.0,10.8,23926
+Mercedes,2018,90600.0,387.0,4,Essence,Manuelle,,1.0,8.1,50702
+Toyota,2015,122732.0,385.0,4,Électrique,Manuelle,Mauvais,,11.5,39070
+Volkswagen,2013,243225.0,180.0,5,Hybride,Manuelle,Neuf,2.0,6.0,32820
+Mercedes,2006,159007.0,83.0,3,Électrique,Automatique,,2.0,7.3,37507
+Nissan,2016,37641.0,300.0,4,Hybride,Automatique,Neuf,,9.5,43164
+Ford,2007,29711.0,,3,Hybride,Manuelle,Neuf,4.0,,180000
+Nissan,2007,70342.0,199.0,5,Hybride,Manuelle,Bon,1.0,4.2,30143
+Peugeot,2005,106896.0,300.0,3,Diesel,,,2.0,13.5,28435
+Nissan,2012,143254.0,,4,Électrique,Automatique,,,11.0,41095
+Peugeot,2012,87833.0,214.0,3,Hybride,Automatique,Mauvais,2.0,9.0,17696
+Ford,2015,56276.0,97.0,4,Essence,Automatique,Mauvais,4.0,13.3,4435
+Honda,2013,19541.0,135.0,3,Diesel,Manuelle,Mauvais,4.0,8.4,21306
+Peugeot,2009,94457.0,232.0,4,Électrique,Manuelle,Très bon,3.0,,31211
+Toyota,2018,213382.0,298.0,4,Hybride,Automatique,Mauvais,2.0,,35304
+Nissan,2007,,330.0,3,Essence,Manuelle,Bon,1.0,5.1,38473
+Nissan,2009,168270.0,233.0,5,Électrique,Automatique,Bon,3.0,11.6,26198
+Toyota,2009,139892.0,370.0,2,Électrique,Manuelle,Très bon,3.0,10.8,43379
+BMW,2023,24070.0,372.0,5,Diesel,Manuelle,Très bon,1.0,11.7,61695
+Audi,2018,200840.0,356.0,3,Électrique,,Mauvais,3.0,13.5,38182
+Honda,2008,142194.0,79.0,5,Diesel,Manuelle,Passable,4.0,11.8,7317
+Volkswagen,2017,80559.0,264.0,4,Hybride,Automatique,Très bon,4.0,10.1,39783
+Peugeot,2014,204615.0,187.0,2,Diesel,Manuelle,Neuf,2.0,12.6,31328
+Toyota,2022,214513.0,339.0,3,Essence,,Bon,2.0,,36022
+Ford,2012,41786.0,149.0,3,Diesel,Automatique,Neuf,1.0,8.1,29394
+Peugeot,2012,226006.0,162.0,3,Essence,Automatique,Bon,,12.9,10025
+Audi,2011,,335.0,2,Diesel,Manuelle,Bon,,6.2,40747
+Ford,2012,137809.0,326.0,4,Électrique,Automatique,Très bon,1.0,11.1,40077
+Mercedes,2018,36062.0,202.0,3,Hybride,Automatique,Très bon,1.0,12.8,49566
+Nissan,2023,185309.0,345.0,5,Essence,Automatique,Neuf,2.0,11.3,42270
+Mercedes,2010,51571.0,333.0,3,Diesel,Manuelle,Bon,4.0,11.0,45024
+Peugeot,2005,25510.0,240.0,3,Diesel,Manuelle,Neuf,1.0,11.5,29691
+Audi,2019,19426.0,70.0,3,Diesel,Automatique,Passable,4.0,8.7,24817
+Honda,2005,37265.0,382.0,3,Électrique,Manuelle,Neuf,,12.7,51779
+Peugeot,2021,,133.0,4,Électrique,Automatique,Mauvais,4.0,6.0,17524
+Toyota,2005,249321.0,,5,Essence,Automatique,Neuf,2.0,5.3,34500
+Renault,2019,,190.0,4,Essence,Manuelle,Mauvais,3.0,,14587
+Peugeot,2006,87312.0,176.0,5,Électrique,Automatique,,3.0,9.3,20634
+Nissan,2018,89613.0,244.0,3,Essence,Manuelle,Mauvais,1.0,,25279
+Nissan,2012,74910.0,273.0,2,Hybride,Manuelle,Passable,4.0,12.2,30938
+Peugeot,2012,52375.0,,4,Hybride,Automatique,,2.0,8.0,38387
+Ford,2023,121826.0,374.0,2,Électrique,Manuelle,Neuf,4.0,8.8,55430
+Renault,2011,35435.0,189.0,4,Essence,Manuelle,Passable,4.0,4.1,8672
+Toyota,2023,96443.0,113.0,3,Diesel,,Bon,,8.1,24743
+Peugeot,2010,188204.0,381.0,4,Hybride,,Très bon,3.0,10.5,38868
+Ford,2010,210017.0,225.0,3,Électrique,Manuelle,Neuf,4.0,4.2,29761
+Nissan,2007,213122.0,276.0,4,Essence,Manuelle,Très bon,4.0,6.8,26053
+Nissan,2011,226474.0,177.0,3,Électrique,Automatique,Passable,3.0,,19259
+Audi,2023,134055.0,320.0,3,Diesel,Manuelle,Bon,2.0,4.4,47751
+Peugeot,2012,228313.0,199.0,5,Hybride,Manuelle,Bon,1.0,8.8,19036
+Renault,2014,151734.0,362.0,3,Électrique,Manuelle,,3.0,5.8,200000
+BMW,2019,,89.0,5,Électrique,,Passable,1.0,11.4,36358
+Renault,2019,209259.0,351.0,3,Électrique,,Mauvais,1.0,12.5,34216
+Nissan,2005,,,2,Diesel,Manuelle,Mauvais,3.0,9.5,26691
+Nissan,2011,187918.0,,3,Électrique,Manuelle,,4.0,13.8,15724
+Mercedes,2008,94071.0,188.0,2,Diesel,Automatique,Mauvais,1.0,,26060
+Nissan,2010,6640.0,104.0,2,Diesel,Automatique,Mauvais,1.0,9.1,13909
+Toyota,2005,44547.0,,3,Diesel,Automatique,Bon,2.0,13.9,28981
+Volkswagen,2009,54620.0,314.0,2,Hybride,,Bon,4.0,6.3,38719
+Peugeot,2005,146389.0,128.0,5,Hybride,Automatique,Très bon,1.0,13.4,20744
+Renault,2008,,,4,Électrique,Manuelle,Neuf,,4.4,46964
+Volkswagen,2006,7564.0,230.0,3,Électrique,Manuelle,Très bon,4.0,,36190
+Ford,2014,158417.0,248.0,2,Hybride,Manuelle,Très bon,3.0,4.7,30001
+BMW,2009,113824.0,275.0,3,Essence,Manuelle,Passable,3.0,11.3,40494
+Toyota,2014,225295.0,81.0,5,Hybride,Automatique,Passable,2.0,10.1,11933
+Renault,2005,79273.0,345.0,3,Diesel,Manuelle,Très bon,3.0,,28836
+Volkswagen,2010,74859.0,250.0,3,Hybride,Manuelle,Très bon,,7.7,31697
+BMW,2017,211837.0,311.0,2,Diesel,Automatique,Très bon,4.0,,43032
+Mercedes,2019,110017.0,285.0,5,Électrique,Manuelle,Mauvais,1.0,4.5,46309
+Toyota,2008,205110.0,320.0,4,Essence,Manuelle,Passable,1.0,7.5,27243
+Toyota,2017,123618.0,,4,Électrique,,Très bon,3.0,13.3,52552
+Mercedes,2019,183465.0,,2,Diesel,Manuelle,Bon,1.0,,37742
+Peugeot,2012,197153.0,,3,Diesel,Manuelle,Bon,3.0,12.3,23631
+Mercedes,2009,125341.0,375.0,2,Diesel,Manuelle,Mauvais,4.0,12.4,43505
+Toyota,2019,233722.0,354.0,2,Essence,Manuelle,Mauvais,4.0,7.7,22224
+Toyota,2008,29430.0,254.0,2,Hybride,Manuelle,Neuf,1.0,10.3,300
+Volkswagen,2016,206604.0,108.0,3,Électrique,Automatique,Neuf,2.0,,33338
+Nissan,2017,27788.0,292.0,5,Électrique,Automatique,,,5.0,53849
+BMW,2006,226577.0,253.0,2,Hybride,Automatique,Mauvais,3.0,4.5,23954
+Mercedes,2023,,247.0,3,Électrique,Automatique,Mauvais,,9.8,46923
+BMW,2023,144991.0,363.0,5,Essence,Automatique,Mauvais,3.0,8.3,180000
+Mercedes,2008,,220.0,2,Électrique,Automatique,Bon,3.0,9.5,41968
+Ford,2008,96122.0,195.0,4,Diesel,,Mauvais,2.0,9.2,14637
+Toyota,2015,39974.0,370.0,5,Hybride,Automatique,Bon,2.0,,46313
+Nissan,2009,107309.0,377.0,2,Essence,Automatique,Neuf,,10.8,39632
+Volkswagen,2015,16371.0,303.0,5,Hybride,Manuelle,Neuf,2.0,11.6,48400
+Nissan,2014,45084.0,77.0,5,Essence,Manuelle,Neuf,1.0,4.1,20936
+Nissan,2012,160701.0,198.0,5,Diesel,Automatique,Très bon,4.0,6.1,22020
+Nissan,2010,182256.0,333.0,5,Hybride,Manuelle,,1.0,11.1,35685
+BMW,2010,61916.0,226.0,5,Électrique,Automatique,,4.0,7.9,36436
+Mercedes,2012,73972.0,,5,Essence,Manuelle,Passable,1.0,,21886
+Honda,2019,193259.0,155.0,2,Hybride,,Passable,3.0,,24305
+Ford,2018,12984.0,,4,Électrique,Manuelle,Très bon,2.0,7.9,45470
+Renault,2015,33039.0,359.0,3,Hybride,Manuelle,,4.0,5.6,40748
+Nissan,2016,,262.0,5,Hybride,Automatique,Passable,1.0,6.6,180000
+Peugeot,2017,83691.0,380.0,3,Hybride,Automatique,Passable,2.0,10.1,33653
+BMW,2012,58606.0,188.0,2,Essence,Automatique,Mauvais,,8.3,33983
+Volkswagen,2022,141688.0,287.0,5,Électrique,Automatique,Passable,2.0,11.7,44193
+Renault,2005,102665.0,183.0,4,Diesel,Automatique,Mauvais,2.0,12.5,7354
+Honda,2019,105373.0,214.0,3,Essence,Manuelle,Bon,1.0,,28552
+Peugeot,2012,181144.0,95.0,5,Essence,Automatique,Très bon,,11.6,7151
+Honda,2015,24574.0,205.0,2,Essence,Automatique,Passable,4.0,7.1,25098
+Renault,2016,134502.0,372.0,4,Diesel,Manuelle,Très bon,3.0,8.1,37828
+Nissan,2016,143748.0,301.0,3,Électrique,Manuelle,,2.0,11.1,39325
+Peugeot,2008,141888.0,145.0,3,Électrique,Automatique,Très bon,3.0,7.9,21518
+Honda,2020,32733.0,397.0,5,Électrique,Manuelle,Bon,3.0,9.9,51749
+Volkswagen,2008,216752.0,371.0,4,Hybride,,Neuf,1.0,5.9,41614
+Mercedes,2009,2050.0,,4,Hybride,Automatique,Passable,1.0,10.0,50483
+Toyota,2009,109996.0,,4,Hybride,Manuelle,Neuf,1.0,,20374
+Mercedes,2012,33933.0,216.0,4,Diesel,Manuelle,Neuf,2.0,12.7,52494
+Renault,2014,24951.0,356.0,2,Hybride,,Neuf,1.0,11.2,45685
+BMW,2021,32413.0,211.0,4,Diesel,,Très bon,1.0,11.5,42417
+Toyota,2013.0,165873.0,122.0,3,Électrique,Manuelle,Mauvais,,9.6,19149
+Ford,2023,186691.0,373.0,3,Hybride,Manuelle,Très bon,2.0,9.8,46981
+Volkswagen,2018,163985.0,138.0,2,Hybride,Automatique,Très bon,4.0,5.3,30894
+Ford,2012,112573.0,159.0,3,Essence,Manuelle,Neuf,1.0,8.4,28965
+Peugeot,2013,171672.0,289.0,3,Diesel,Manuelle,Très bon,1.0,8.5,35565
+Toyota,2015.0,188847.0,261.0,4,Électrique,Manuelle,Neuf,1.0,13.6,42358
+Ford,2005,221888.0,132.0,3,Essence,Automatique,Mauvais,4.0,8.3,2000
+Ford,2018,221165.0,142.0,2,Essence,Manuelle,Passable,1.0,9.5,13326
+Honda,2009,243662.0,230.0,4,Électrique,Manuelle,Neuf,4.0,,32146
+Mercedes,2018,166472.0,238.0,5,Essence,Automatique,Mauvais,3.0,10.4,29508
+Volkswagen,2011,,106.0,2,Essence,,Neuf,3.0,10.3,20746
+Toyota,2015,188847.0,261.0,4,Électrique,Manuelle,Neuf,1.0,13.6,42358
+Mercedes,2022,,397.0,2,Diesel,Manuelle,Neuf,1.0,5.4,59716
+Peugeot,2006,87312.0,176.0,5,Électrique,Automatique,,3.0,9.3,20634
+Renault,2012,94270.0,137.0,4,Hybride,Manuelle,Bon,1.0,8.2,14232
+Ford,2015,55337.0,271.0,5,Hybride,Manuelle,Neuf,1.0,7.2,200000
+Peugeot,2012.0,202503.0,87.0,2,Essence,Automatique,Bon,2.0,9.8,7548
+Honda,2007,,78.0,2,Essence,Automatique,Passable,4.0,10.2,8608
+Nissan,2012,143254.0,,4,Électrique,Automatique,,,11.0,41095
+BMW,2010,198370.0,94.0,5,Électrique,Manuelle,Bon,1.0,13.4,31706
+Ford,2018,12984.0,,4,Électrique,Manuelle,Très bon,2.0,7.9,45470
+Volkswagen,2019,101332.0,185.0,2,Essence,Automatique,Mauvais,3.0,9.1,17785
+Ford,2019,137717.0,128.0,4,Électrique,Manuelle,Neuf,1.0,6.1,34978
+Mercedes,2019,57761.0,116.0,4,Hybride,Automatique,Passable,4.0,6.9,39595
+Ford,2005,120993.0,227.0,5,Essence,Manuelle,Bon,2.0,9.6,14012
