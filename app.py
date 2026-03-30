@@ -5,6 +5,7 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 import gradio as gr
 from huggingface_hub import hf_hub_download
 import joblib
@@ -20,12 +21,11 @@ APP_DESCRIPTION = (
 )
 MODEL_PATH_XGB = "best_pipeline_xgb.joblib"
 MODEL_PATH_LR = "best_pipeline_lr.joblib"
+MODEL_PATH_PIPELINE = "pipeline_voiture.joblib"
 PRICE_MAE_EUR = 4500
 MARKET_MEDIAN_EUR = 23000
-HF_MODEL_SOURCES = [
-    ("a126OPS/Car_Predict", "model"),
-    ("a126OPS/car-price-predictor-demo", "space"),
-]
+HF_MODEL_REPO_ID = "a126OPS/carburant_price_predict"
+HF_MODEL_SUBFOLDER = "car_price"
 
 BRAND_OPTIONS = [
     "Toyota",
@@ -117,31 +117,31 @@ def load_pipeline() -> tuple[Any, str]:
         return joblib.load(MODEL_PATH_XGB), "XGBoost"
     if os.path.exists(MODEL_PATH_LR):
         return joblib.load(MODEL_PATH_LR), "Regression lineaire"
+    if os.path.exists(MODEL_PATH_PIPELINE):
+        return joblib.load(MODEL_PATH_PIPELINE), "Pipeline voiture"
 
-    for repo_id, repo_type in HF_MODEL_SOURCES:
+    remote_candidates = [
+        (MODEL_PATH_XGB, "XGBoost"),
+        (MODEL_PATH_LR, "Regression lineaire"),
+        (MODEL_PATH_PIPELINE, "Pipeline voiture"),
+    ]
+
+    for filename, model_label in remote_candidates:
         try:
             cached_path = hf_hub_download(
-                repo_id=repo_id,
-                repo_type=repo_type,
-                filename=MODEL_PATH_XGB,
+                repo_id=HF_MODEL_REPO_ID,
+                filename=filename,
+                subfolder=HF_MODEL_SUBFOLDER,
             )
-            return joblib.load(cached_path), "XGBoost"
-        except Exception:
-            pass
-
-        try:
-            cached_path = hf_hub_download(
-                repo_id=repo_id,
-                repo_type=repo_type,
-                filename=MODEL_PATH_LR,
-            )
-            return joblib.load(cached_path), "Regression lineaire"
+            return joblib.load(cached_path), model_label
         except Exception:
             pass
 
     raise FileNotFoundError(
-        "Aucun modele trouve localement ou sur Hugging Face. "
-        "Ajoutez best_pipeline_xgb.joblib / best_pipeline_lr.joblib ou verifiez les repos distants."
+        "Aucun modele trouve localement ou dans le repo Hugging Face "
+        f"{HF_MODEL_REPO_ID}/{HF_MODEL_SUBFOLDER}. Ajoutez "
+        "best_pipeline_xgb.joblib / best_pipeline_lr.joblib / pipeline_voiture.joblib "
+        "ou verifiez les artefacts distants."
     )
 
 
@@ -463,6 +463,8 @@ def healthcheck() -> dict[str, Any]:
     return {
         "status": "ok",
         "model_name": MODEL_NAME,
+        "model_repo_id": HF_MODEL_REPO_ID,
+        "model_subfolder": HF_MODEL_SUBFOLDER,
         "api_version": "1.0.0",
     }
 
@@ -475,6 +477,8 @@ def api_options() -> dict[str, Any]:
         "transmissions": TRANSMISSION_OPTIONS,
         "vehicle_states": STATE_OPTIONS,
         "model_name": MODEL_NAME,
+        "model_repo_id": HF_MODEL_REPO_ID,
+        "model_subfolder": HF_MODEL_SUBFOLDER,
         "docs_url": "/docs",
         "predict_url": "/api/predict",
     }
@@ -491,7 +495,12 @@ def api_predict(payload: CarPredictionRequest) -> CarPredictionResponse:
         raise HTTPException(status_code=500, detail=f"Prediction error: {exc}") from exc
 
 
-app = gr.mount_gradio_app(api, demo, path="/")
+@api.get("/", include_in_schema=False)
+def root_redirect() -> RedirectResponse:
+    return RedirectResponse(url="/gradio")
+
+
+app = gr.mount_gradio_app(api, demo, path="/gradio")
 
 
 if __name__ == "__main__":
