@@ -11,7 +11,6 @@ from huggingface_hub import hf_hub_download
 import joblib
 import pandas as pd
 from pydantic import BaseModel, Field
-import requests
 from sklearn.base import BaseEstimator, TransformerMixin
 
 
@@ -299,22 +298,7 @@ def predire_prix(
             "consommation_L100km": consommation,
         }
     )
-    return result["predicted_price"], result["summary_markdown"]
-
-
-def predire_prix_carburant(departement, jour):
-    """Proxy helper kept for the secondary tab."""
-    url = "https://huggingface.co/spaces/a126OPS/carburant_predict"
-    payload = {"departement": departement, "jour": jour}
-
-    try:
-        response = requests.post(url, json=payload, timeout=20)
-        response.raise_for_status()
-        result = response.json()
-    except Exception as exc:
-        return "Erreur", f"Service carburant indisponible: {exc}"
-
-    return result.get("prix", "Erreur"), result.get("details", "")
+    return result["predicted_price"], gr.update(value=result["summary_markdown"], visible=True)
 
 
 def build_gradio_app() -> gr.Blocks:
@@ -396,8 +380,9 @@ def build_gradio_app() -> gr.Blocks:
         btn = gr.Button("Estimer le prix", variant="primary", size="lg")
         prix_brut = gr.Number(label="Prix estime (EUR)", precision=0, interactive=False)
         output = gr.Markdown(
-            value="*Remplissez le formulaire et cliquez sur **Estimer le prix**...*",
+            value="",
             elem_id="result-box",
+            visible=False,
         )
 
         btn.click(
@@ -417,29 +402,6 @@ def build_gradio_app() -> gr.Blocks:
             outputs=[prix_brut, output],
             api_name="predict_price",
         )
-
-        with gr.Tab("Prediction Prix Carburant"):
-            gr.Markdown(
-                """
-                # Prediction des Prix Carburant a J+7
-                **Modele connecte au flux officiel des prix carburant.**
-                """
-            )
-
-            with gr.Row():
-                departement = gr.Textbox(label="Departement", placeholder="Exemple : 75")
-                jour = gr.Slider(minimum=1, maximum=7, value=1, step=1, label="Jour (J+)")
-
-            btn_carburant = gr.Button("Predire", variant="primary")
-            prix_carburant = gr.Textbox(label="Prix estime (EUR)", interactive=False)
-            details_carburant = gr.Markdown("*Cliquez sur Predire pour voir les details...*")
-
-            btn_carburant.click(
-                fn=predire_prix_carburant,
-                inputs=[departement, jour],
-                outputs=[prix_carburant, details_carburant],
-                api_name="predict_fuel_price",
-            )
 
     return demo
 
