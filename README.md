@@ -2,6 +2,12 @@
 
 Car Price Predictor is a Gradio app that estimates the selling price of a used car from its main technical and commercial characteristics. The app returns an estimated price, a price range, and a quick market verdict.
 
+## Project Documents
+
+- Main project page: this `README.md`
+- Model card in Markdown: [MODEL_CARD.md](./MODEL_CARD.md)
+- Original root file: [readme](./readme)
+
 ## Main Features
 
 - Estimate the price of a used vehicle with a trained machine learning pipeline

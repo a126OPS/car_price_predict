@@ -42,12 +42,8 @@ print(f"Prix estimé : {predicted_price[0]:.0f} €")
 - **Variables d'entrée :** année, kilométrage, puissance (CV), type de carburant, marque, modèle, boîte de vitesses
 - **Variable cible :** prix de vente en euros
 
-## Performances
 
-| Métrique | Valeur |
-|----------|--------|
-| RMSE | À compléter |
-| R² | À compléter |
+
 
 ## Limites
 
