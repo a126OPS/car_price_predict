@@ -1,32 +1,60 @@
 ---
-title: Estimateur Prix Voiture
-emoji: ""
-colorFrom: blue
-colorTo: indigo
-sdk: gradio
-sdk_version: 4.44.0
-app_file: app.py
-pinned: true
+language:
+- fr
 license: mit
-short_description: Prédiction du prix d'un véhicule avec XGBoost
+tags:
+- tabular-regression
+- price-prediction
+- car
+- joblib
+- scikit-learn
+metrics:
+- rmse
+- r2
 ---
 
-# Estimateur de Prix Voiture
+# 🚗 Car Price Predictor
 
-Modèle de Machine Learning entraîné pour prédire le prix d'un véhicule d'occasion sur le marché français.
+## Description
 
-## Modèle
-
-- **Algorithme** : XGBoost Regressor (pipeline Scikit-learn)
-- **Métriques** : R² > 0.85 · MAE ≈ 4 500 €
-- **Features** : marque, année, kilométrage, puissance, carburant, transmission, état, nb_propriétaires, consommation
+Ce modèle prédit le **prix de vente d'un véhicule d'occasion** à partir de ses caractéristiques techniques et commerciales. Il est entraîné sur des données de marché automobile françaises et vise à aider acheteurs et vendeurs à estimer un prix juste.
 
 ## Utilisation
 
-Remplissez le formulaire avec les caractéristiques du véhicule et cliquez sur **Estimer le prix** pour obtenir une estimation instantanée avec fourchette et verdict marché.
+```python
+import joblib
+import numpy as np
+from huggingface_hub import hf_hub_download
+
+# Chargement du modèle
+model_path = hf_hub_download(repo_id="a126OPS/Car_Predict", filename="model.joblib")
+model = joblib.load(model_path)
+
+# Exemple de prédiction
+features = np.array([[2019, 80000, 120, 1.6, 5]])  # année, km, cv, cylindrée, portes
+predicted_price = model.predict(features)
+print(f"Prix estimé : {predicted_price[0]:.0f} €")
+```
+
+## Données d'entraînement
+
+- **Source :** Données de ventes de véhicules d'occasion
+- **Variables d'entrée :** année, kilométrage, puissance (CV), type de carburant, marque, modèle, boîte de vitesses
+- **Variable cible :** prix de vente en euros
+
+
+
+## Limites
+
+- Le modèle est calibré sur le marché français
+- Les véhicules de luxe ou très anciens peuvent être moins bien estimés
+- Les données d'entraînement ont une date limite — les fluctuations récentes du marché ne sont pas reflétées
 
 ## Auteur
 
-**Atillio HOUNGUE** — Data Scientist & ML Engineer  
-Email : atilliohoungue@gmail.com  
-Portfolio : [https://atillio-houngue.github.io](https://atillio-houngue.github.io)
+Développé par [a126OPS](https://huggingface.co/a126OPS)  
+🔗 Démo interactive : [car-price-predictor-demo](https://huggingface.co/spaces/a126OPS/car-price-predictor-demo)
+
+## Licence
+
+[MIT](https://opensource.org/licenses/MIT)
