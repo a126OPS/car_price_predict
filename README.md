@@ -1,31 +1,62 @@
-﻿---
-title: Prédiction Prix Carburant sur 7 jours
-colorFrom: blue
-colorTo: indigo
-sdk: gradio
-sdk_version: 4.44.0
-app_file: app.py
-pinned: true
-license: mit
-short_description: Modèle de prédiction J+7 des prix carburant à la pompe par département français.
----
+# Car Price Predictor
 
-# Prédiction Prix Carburant sur 7 jours
+Car Price Predictor is a Gradio app that estimates the selling price of a used car from its main technical and commercial characteristics. The app returns an estimated price, a price range, and a quick market verdict.
 
-Modèle de prédiction J+7 des prix carburant à la pompe par département français. 14 millions d'observations réelles (data.economie.gouv.fr), feature engineering séries temporelles, MAE de 2 centimes. Interface temps réel connectée au flux officiel.
+## Main Features
 
-## Modèle
+- Estimate the price of a used vehicle with a trained machine learning pipeline
+- Display a pessimistic, central, and optimistic price range
+- Show a readable vehicle recap with mileage per year
+- Provide a Gradio interface ready for local use or deployment
+- Include a secondary tab connected to a fuel-price prediction service
 
-- Algorithme : XGBoost Regressor (pipeline Scikit-learn)
-- Métriques : MAE ≈ 2 centimes
-- Données : 14 millions d'observations réelles (data.economie.gouv.fr)
+## Model Inputs
 
-## Utilisation
+- `marque`
+- `annee`
+- `kilometrage`
+- `puissance_cv`
+- `nb_portes`
+- `carburant`
+- `transmission`
+- `etat`
+- `nb_proprietaires`
+- `consommation_L100km`
 
-Remplissez le formulaire avec les caractéristiques demandées et cliquez sur **Prédire** pour obtenir une estimation des prix carburant à J+7.
+## Tech Stack
 
-## Auteur
+- Python
+- Gradio
+- pandas
+- scikit-learn
+- XGBoost
+- joblib
 
-**Atillio HOUNGUE** — Data Scientist & ML Engineer  
-Email : atilliohoungue@gmail.com  
-Portfolio : https://atillio-houngue.github.io
+## Run Locally
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Add one of these model files at the project root before starting the app:
+
+- `best_pipeline_xgb.joblib`
+- `best_pipeline_lr.joblib`
+
+Launch the interface:
+
+```bash
+python app.py
+```
+
+## Demo
+
+https://huggingface.co/spaces/a126OPS/car-price-predictor-demo
+
+## Author
+
+Atillio Houngue
+
+Portfolio: https://atillio-houngue.github.io
