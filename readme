@@ -1,17 +1,4 @@
----
-language:
-- fr
-license: mit
-tags:
-- tabular-regression
-- price-prediction
-- car
-- joblib
-- scikit-learn
-metrics:
-- rmse
-- r2
----
+
 
 # 🚗 Car Price Predictor
 
